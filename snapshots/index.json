@@ -1,0 +1,27 @@
+{
+  "snapshots": [
+    {
+      "month": "2026-10",
+      "captured": "2026-10-01",
+      "us_version": "2026.09.4",
+      "eu_version": "2026.09.2",
+      "url": "https://ylishi.tools/rates/snapshots/2026-10.json"
+    },
+    {
+      "month": "2026-09",
+      "captured": "2026-09-30",
+      "us_version": "2026.09.4",
+      "eu_version": "2026.09.2",
+      "url": "https://ylishi.tools/rates/snapshots/2026-09.json",
+      "revised_at": "2026-09-30"
+    },
+    {
+      "month": "2026-08",
+      "captured": "2026-08-31",
+      "us_version": "2026.08.1",
+      "eu_version": "2026.08.1",
+      "url": "https://ylishi.tools/rates/snapshots/2026-08.json"
+    }
+  ],
+  "latest": "2026-10"
+}

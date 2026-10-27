@@ -1,0 +1,513 @@
+{
+  "snapshot_month": "2026-08",
+  "captured_at": "2026-08-31",
+  "license": "CC BY 4.0 — attribution: ylishi.tools https://ylishi.tools/annual-fba-report/",
+  "datasets": {
+    "us": {
+      "version": "2026.08.1",
+      "source_sha256_16": "b8acc92acff002f8",
+      "referral_categories": 24,
+      "fulfillment_tiers": 7,
+      "rates": {
+        "fuel_surcharge_on_fulfillment": 0.035,
+        "referral_fees": [
+          {
+            "category": "Clothing & Accessories (17%)",
+            "category_zh": "服装配饰（17%）",
+            "rate": 0.17,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Electronics (8% ≤$100 / 15% >$100)",
+            "category_zh": "电子产品（≤$100收8%，>$100收15%）",
+            "rate": 0.08,
+            "min_fee_usd": 0.3,
+            "tiered": true,
+            "high_rate": null
+          },
+          {
+            "category": "Electronics Accessories (15%)",
+            "category_zh": "电子配件（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Health & Personal Care (15%)",
+            "category_zh": "健康与个人护理（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Home & Kitchen (15%)",
+            "category_zh": "家居与厨房（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Sports & Outdoors (15%)",
+            "category_zh": "运动与户外（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Toys & Games (15%)",
+            "category_zh": "玩具与游戏（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Shoes, Handbags & Sunglasses (15%)",
+            "category_zh": "鞋类、箱包与墨镜（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Beauty (15%)",
+            "category_zh": "美妆（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Tools & Home Improvement (15%)",
+            "category_zh": "工具与家装（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Books (15%)",
+            "category_zh": "图书（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Video Games (15%)",
+            "category_zh": "电子游戏（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Musical Instruments (15%)",
+            "category_zh": "乐器（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Software (15%)",
+            "category_zh": "软件（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Video Game Consoles (8%)",
+            "category_zh": "游戏主机（8%）",
+            "rate": 0.08,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Amazon Device Accessories (45%)",
+            "category_zh": "亚马逊设备配件（45%）",
+            "rate": 0.45,
+            "min_fee_usd": 0.3,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Automotive (15%)",
+            "category_zh": "汽车配件（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Baby Products (15%)",
+            "category_zh": "母婴用品（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Grocery & Gourmet Food (15%)",
+            "category_zh": "食品杂货（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Industrial & Scientific (15%)",
+            "category_zh": "工业与科研（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Jewelry (20%)",
+            "category_zh": "珠宝首饰（20%）",
+            "rate": 0.2,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Luggage & Travel Accessories (15%)",
+            "category_zh": "箱包旅行配件（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Office Products (15%)",
+            "category_zh": "办公用品（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          },
+          {
+            "category": "Pet Supplies (15%)",
+            "category_zh": "宠物用品（15%）",
+            "rate": 0.15,
+            "min_fee_usd": 1,
+            "tiered": false,
+            "high_rate": null
+          }
+        ],
+        "fulfillment_fees": [
+          {
+            "size_tier": "Small Standard (<6 oz)",
+            "size_tier_zh": "小型标准件（<6盎司）",
+            "max_weight_oz": 6,
+            "base_fee_usd": 3.45,
+            "per_lb_over_usd": null,
+            "over_start_lb": null,
+            "oversize": false,
+            "estimated": false
+          },
+          {
+            "size_tier": "Large Standard (6 oz–1 lb)",
+            "size_tier_zh": "大型标准件（6盎司–1磅）",
+            "max_weight_oz": 16,
+            "base_fee_usd": 4.6,
+            "per_lb_over_usd": null,
+            "over_start_lb": null,
+            "oversize": false,
+            "estimated": false
+          },
+          {
+            "size_tier": "Large Standard (1–2 lb)",
+            "size_tier_zh": "大型标准件（1–2磅）",
+            "max_weight_oz": 32,
+            "base_fee_usd": 5.82,
+            "per_lb_over_usd": null,
+            "over_start_lb": null,
+            "oversize": false,
+            "estimated": false
+          },
+          {
+            "size_tier": "Large Standard (2–3 lb)",
+            "size_tier_zh": "大型标准件（2–3磅）",
+            "max_weight_oz": 48,
+            "base_fee_usd": 6.67,
+            "per_lb_over_usd": null,
+            "over_start_lb": null,
+            "oversize": false,
+            "estimated": false
+          },
+          {
+            "size_tier": "Large Standard (3–20 lb)",
+            "size_tier_zh": "大型标准件（3–20磅）",
+            "max_weight_oz": 320,
+            "base_fee_usd": 6.97,
+            "per_lb_over_usd": 0.08,
+            "over_start_lb": 3.0,
+            "oversize": false,
+            "estimated": false
+          },
+          {
+            "size_tier": "Small Oversize (≤50 lb)",
+            "size_tier_zh": "小型大件（≤50磅）",
+            "max_weight_oz": 800,
+            "base_fee_usd": 7.55,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1.0,
+            "oversize": true,
+            "estimated": false
+          },
+          {
+            "size_tier": "Large Oversize (estimate)",
+            "size_tier_zh": "大型大件（估算）",
+            "max_weight_oz": 99999,
+            "base_fee_usd": 9.35,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1.0,
+            "oversize": true,
+            "estimated": true
+          }
+        ],
+        "monthly_storage_per_cuft": {
+          "standard": {
+            "jan_sep": 0.78,
+            "oct_dec": 2.4
+          },
+          "oversize": {
+            "jan_sep": 0.56,
+            "oct_dec": 1.4
+          }
+        },
+        "aged_inventory_surcharge_per_cuft": [
+          {
+            "days": "181-210",
+            "start_day": 181,
+            "end_day": 210,
+            "rate_usd": 0.5,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "211-240",
+            "start_day": 211,
+            "end_day": 240,
+            "rate_usd": 1,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "241-270",
+            "start_day": 241,
+            "end_day": 270,
+            "rate_usd": 1.5,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "271-300",
+            "start_day": 271,
+            "end_day": 300,
+            "rate_usd": 5.45,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "301-330",
+            "start_day": 301,
+            "end_day": 330,
+            "rate_usd": 5.7,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "331-365",
+            "start_day": 331,
+            "end_day": 365,
+            "rate_usd": 5.9,
+            "per_unit_min_usd": null
+          },
+          {
+            "days": "366-455",
+            "start_day": 366,
+            "end_day": 455,
+            "rate_usd": 6.9,
+            "per_unit_min_usd": 0.3
+          },
+          {
+            "days": "456+",
+            "start_day": 456,
+            "end_day": null,
+            "rate_usd": 7.9,
+            "per_unit_min_usd": 0.35
+          }
+        ],
+        "inbound_placement": [
+          {
+            "option": "None / 无",
+            "standard_unit_usd": 0,
+            "oversize_unit_usd": 0
+          },
+          {
+            "option": "Minimal placement ($0.15–$0.50)",
+            "standard_unit_usd": 0.15,
+            "oversize_unit_usd": 0.3
+          },
+          {
+            "option": "Partial placement ($0.35–$0.98)",
+            "standard_unit_usd": 0.35,
+            "oversize_unit_usd": 0.75
+          },
+          {
+            "option": "Small parcel ($0.10)",
+            "standard_unit_usd": 0.1,
+            "oversize_unit_usd": 0.1
+          }
+        ],
+        "return_processing_fees": [
+          {
+            "size_tier": "Small Standard (<6 oz)",
+            "per_unit_usd": 1.9,
+            "per_lb_over_usd": null
+          },
+          {
+            "size_tier": "Large Standard (6 oz–1 lb)",
+            "per_unit_usd": 3.39,
+            "per_lb_over_usd": null
+          },
+          {
+            "size_tier": "Large Standard (1–2 lb)",
+            "per_unit_usd": 4.63,
+            "per_lb_over_usd": null
+          },
+          {
+            "size_tier": "Large Standard (2–3 lb)",
+            "per_unit_usd": 4.73,
+            "per_lb_over_usd": null
+          },
+          {
+            "size_tier": "Large Standard (3–20 lb)",
+            "per_unit_usd": 5,
+            "per_lb_over_usd": 0.05
+          },
+          {
+            "size_tier": "Small Oversize (≤50 lb)",
+            "per_unit_usd": 5,
+            "per_lb_over_usd": 0.05
+          },
+          {
+            "size_tier": "Large Oversize (estimate)",
+            "per_unit_usd": 5,
+            "per_lb_over_usd": 0.05
+          }
+        ]
+      }
+    },
+    "eu": {
+      "version": "2026.08.1",
+      "rates": {
+        "fulfillment_fees_by_country": {
+          "DE": {
+            "currency": "EUR",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "FR": {
+            "currency": "EUR",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "IT": {
+            "currency": "EUR",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "ES": {
+            "currency": "EUR",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "NL": {
+            "currency": "EUR",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "PL": {
+            "currency": "PLN",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "SE": {
+            "currency": "SEK",
+            "small_standard_base": 3.2,
+            "large_standard_base": 3.95,
+            "per_kg_over_1kg": 0.45
+          },
+          "UK": {
+            "currency": "GBP",
+            "small_standard_base": 2.5,
+            "large_standard_base": 3.1,
+            "per_kg_over_1kg": 0.38
+          }
+        },
+        "referral_rates_by_category": {
+          "Standard": 0.15,
+          "Clothing": 0.15,
+          "Electronics": 0.08,
+          "Home": 0.15,
+          "Beauty": 0.15,
+          "Sports": 0.15,
+          "Tools": 0.12,
+          "Grocery": 0.08
+        },
+        "pan_eu_storage_countries": [
+          "DE",
+          "FR",
+          "IT",
+          "ES",
+          "NL",
+          "PL",
+          "SE"
+        ],
+        "efn_cross_border_surcharge_per_unit": {
+          "FR": 0.26,
+          "IT": 0.26,
+          "ES": 0.26,
+          "NL": 0.26,
+          "PL": 1.15,
+          "SE": 2.5,
+          "UK": 0.26
+        },
+        "storage_assumption_per_cuft_eur": 26.0,
+        "returns_allowance": "1% of price"
+      }
+    }
+  },
+  "diff_vs_previous": "see rates/snapshots/index.json",
+  "corrections": [
+    {
+      "date": "2026-09-13",
+      "field": "datasets.us.rates.aged_inventory_surcharge_per_cuft",
+      "reason": "Previous values (181-210 $1.22 / 211-240 $1.54 / 241-270 $1.94 / 271-300 $2.36 / 301-330 $2.66) were site interpolations between $0.50 and $5.45 that erased the real 271-day cliff; the 331-365 band was missing entirely. Replaced with the official US Aged Inventory Surcharge table (Seller Central GJQNPA23YWVA4SBD) as carried in js/fba-rates-2026.js.",
+      "replaced_with_version": "2026.09.1",
+      "new_bands": [
+        "181-210",
+        "211-240",
+        "241-270",
+        "271-300",
+        "301-330",
+        "331-365",
+        "366-455",
+        "456+"
+      ]
+    }
+  ]
+}

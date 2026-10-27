@@ -1,0 +1,717 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "dataset": {
+    "id": "ylishi-fba-us-2026",
+    "name": "Amazon US FBA Fee Rates 2026",
+    "description": "Complete Amazon US Fulfillment by Amazon (FBA) fee schedule for 2026: referral fee rates by category, FBA fulfillment fees by size tier, monthly storage rates, aged inventory surcharges, inbound placement fees, low-inventory-level fee, return processing fees, the fuel & logistics surcharge, the 2026-10-15 peak-fulfilment uplift table, and the 2026 return policy.",
+    "version": "2026.09.4",
+    "effective_dates": {
+      "rate_card": "2026-01-15",
+      "fuel_surcharge": "2026-04-17",
+      "peak_fulfillment": "2026-10-15",
+      "peak_fulfillment_reverts": "2027-01-15",
+      "peak_storage": "2026-10-01",
+      "peak_storage_reverts": "2027-01-01",
+      "aged_inventory_tiers": "2026-01-16",
+      "low_inventory_level_fee": "2026-01-15"
+    },
+    "last_verified": "2026-10-27",
+    "publisher": {
+      "name": "ylishi.tools",
+      "url": "https://ylishi.tools/annual-fba-report/"
+    },
+    "sources": [
+      {
+        "name": "Amazon Seller Central US FBA rate card (Jan 15, 2026)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/201112650"
+      },
+      {
+        "name": "Amazon Seller Central US Aged Inventory Surcharge rate table",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GJQNPA23YWVA4SBD"
+      },
+      {
+        "name": "Amazon Seller Central US Low-inventory-level fee rate table (verified 2026-09-15)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GV43F6S76Y9DHYRH"
+      }
+    ],
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Data: ylishi.tools (https://ylishi.tools/annual-fba-report/), CC BY 4.0"
+    },
+    "how_to_cite": "ylishi.tools, Amazon US FBA fee rates 2026, https://ylishi.tools/rates/fba-us-2026.json, CC BY 4.0",
+    "coverage": {
+      "marketplace": "amazon.com (US)",
+      "currency": "USD",
+      "categories": 24,
+      "size_tiers": 11
+    },
+    "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
+    "source_sha256_16": "a6781d68c35d27e5"
+  },
+  "rates": {
+    "fuel_surcharge_on_fulfillment": 0.035,
+    "referral_fees": [
+      {
+        "category": "Clothing & Accessories (5% ≤$15 / 10% $15–$20 / 17% >$20)",
+        "category_zh": "Clothing & Accessories (5% ≤$15 / 10% $15–$20 / 17% >$20)",
+        "rate": 0.17,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null,
+        "bands": [
+          {
+            "upTo": 15,
+            "rate": 0.05
+          },
+          {
+            "upTo": 20,
+            "rate": 0.1
+          },
+          {
+            "upTo": null,
+            "rate": 0.17
+          }
+        ]
+      },
+      {
+        "category": "Consumer Electronics (8%)",
+        "category_zh": "Consumer Electronics (8%)",
+        "rate": 0.08,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Electronics Accessories (15% ≤$100 / 8% >$100)",
+        "category_zh": "Electronics Accessories (15% ≤$100 / 8% >$100)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": true,
+        "high_rate": 0.08,
+        "portion_bands": [
+          {
+            "upTo": 100,
+            "rate": 0.15
+          },
+          {
+            "upTo": null,
+            "rate": 0.08
+          }
+        ]
+      },
+      {
+        "category": "Health & Personal Care (8% ≤$10 / 15% >$10)",
+        "category_zh": "Health & Personal Care (8% ≤$10 / 15% >$10)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null,
+        "bands": [
+          {
+            "upTo": 10,
+            "rate": 0.08
+          },
+          {
+            "upTo": null,
+            "rate": 0.15
+          }
+        ]
+      },
+      {
+        "category": "Home & Kitchen (15%)",
+        "category_zh": "Home & Kitchen (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Sports & Outdoors (15%)",
+        "category_zh": "Sports & Outdoors (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Toys & Games (15%)",
+        "category_zh": "Toys & Games (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Footwear, Handbags & Sunglasses (15%)",
+        "category_zh": "Footwear, Handbags & Sunglasses (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Beauty (8% ≤$10 / 15% >$10)",
+        "category_zh": "Beauty (8% ≤$10 / 15% >$10)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null,
+        "bands": [
+          {
+            "upTo": 10,
+            "rate": 0.08
+          },
+          {
+            "upTo": null,
+            "rate": 0.15
+          }
+        ]
+      },
+      {
+        "category": "Tools & Home Improvement (15%)",
+        "category_zh": "Tools & Home Improvement (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Books & Media (15% + $1.80 closing fee)",
+        "category_zh": "Books & Media (15% + $1.80 closing fee)",
+        "rate": 0.15,
+        "min_fee_usd": null,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Video Games & Gaming Accessories (15%)",
+        "category_zh": "Video Games & Gaming Accessories (15%)",
+        "rate": 0.15,
+        "min_fee_usd": null,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Musical Instruments (15%)",
+        "category_zh": "Musical Instruments (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Software (15% + $1.80 closing fee)",
+        "category_zh": "Software (15% + $1.80 closing fee)",
+        "rate": 0.15,
+        "min_fee_usd": null,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Video Game Consoles (8%)",
+        "category_zh": "Video Game Consoles (8%)",
+        "rate": 0.08,
+        "min_fee_usd": null,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Amazon Device Accessories (45%)",
+        "category_zh": "Amazon Device Accessories (45%)",
+        "rate": 0.45,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Automotive & Powersports (12%)",
+        "category_zh": "Automotive & Powersports (12%)",
+        "rate": 0.12,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Baby Products (8% ≤$10 / 15% >$10)",
+        "category_zh": "Baby Products (8% ≤$10 / 15% >$10)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null,
+        "bands": [
+          {
+            "upTo": 10,
+            "rate": 0.08
+          },
+          {
+            "upTo": null,
+            "rate": 0.15
+          }
+        ]
+      },
+      {
+        "category": "Grocery & Gourmet Food (8% ≤$15 / 15% >$15)",
+        "category_zh": "Grocery & Gourmet Food (8% ≤$15 / 15% >$15)",
+        "rate": 0.15,
+        "min_fee_usd": null,
+        "tiered": false,
+        "high_rate": null,
+        "bands": [
+          {
+            "upTo": 15,
+            "rate": 0.08
+          },
+          {
+            "upTo": null,
+            "rate": 0.15
+          }
+        ]
+      },
+      {
+        "category": "Business, Industrial & Scientific (12%)",
+        "category_zh": "Business, Industrial & Scientific (12%)",
+        "rate": 0.12,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Jewelry (20% ≤$250 / 5% >$250, portion)",
+        "category_zh": "Jewelry (20% ≤$250 / 5% >$250, portion)",
+        "rate": 0.2,
+        "min_fee_usd": 0.3,
+        "tiered": true,
+        "high_rate": 0.05,
+        "portion_bands": [
+          {
+            "upTo": 250,
+            "rate": 0.2
+          },
+          {
+            "upTo": null,
+            "rate": 0.05
+          }
+        ]
+      },
+      {
+        "category": "Backpacks, Handbags & Luggage (15%)",
+        "category_zh": "Backpacks, Handbags & Luggage (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Office Products (15%)",
+        "category_zh": "Office Products (15%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      },
+      {
+        "category": "Pet Supplies (15%; veterinary diets 22%)",
+        "category_zh": "Pet Supplies (15%; veterinary diets 22%)",
+        "rate": 0.15,
+        "min_fee_usd": 0.3,
+        "tiered": false,
+        "high_rate": null
+      }
+    ],
+    "fulfillment_fees": [
+      {
+        "tier_key": "ss",
+        "size_tier": "Small Standard (<6 oz)",
+        "size_tier_zh": "Small Standard (<6 oz)",
+        "max_weight_oz": 6,
+        "base_fee_usd": 3.45,
+        "per_lb_over_usd": null,
+        "over_start_lb": null,
+        "oversize": false,
+        "estimated": false
+      },
+      {
+        "tier_key": "ls1",
+        "size_tier": "Large Standard (6 oz–1 lb)",
+        "size_tier_zh": "Large Standard (6 oz–1 lb)",
+        "max_weight_oz": 16,
+        "base_fee_usd": 4.6,
+        "per_lb_over_usd": null,
+        "over_start_lb": null,
+        "oversize": false,
+        "estimated": false
+      },
+      {
+        "tier_key": "ls2",
+        "size_tier": "Large Standard (1–2 lb)",
+        "size_tier_zh": "Large Standard (1–2 lb)",
+        "max_weight_oz": 32,
+        "base_fee_usd": 5.82,
+        "per_lb_over_usd": null,
+        "over_start_lb": null,
+        "oversize": false,
+        "estimated": false
+      },
+      {
+        "tier_key": "ls3",
+        "size_tier": "Large Standard (2–3 lb)",
+        "size_tier_zh": "Large Standard (2–3 lb)",
+        "max_weight_oz": 48,
+        "base_fee_usd": 6.67,
+        "per_lb_over_usd": null,
+        "over_start_lb": null,
+        "oversize": false,
+        "estimated": false
+      },
+      {
+        "tier_key": "ls4",
+        "size_tier": "Large Standard (3–20 lb)",
+        "size_tier_zh": "Large Standard (3–20 lb)",
+        "max_weight_oz": 320,
+        "base_fee_usd": 6.97,
+        "per_lb_over_usd": 0.32,
+        "over_start_lb": 3.0,
+        "oversize": false,
+        "estimated": false
+      },
+      {
+        "tier_key": "so",
+        "size_tier": "Small Bulky (0–50 lb)",
+        "size_tier_zh": "Small Bulky (0–50 lb)",
+        "max_weight_oz": 800,
+        "base_fee_usd": 7.55,
+        "per_lb_over_usd": 0.38,
+        "over_start_lb": 1.0,
+        "oversize": true,
+        "estimated": false
+      },
+      {
+        "tier_key": "lo",
+        "size_tier": "Large Bulky (0–50 lb)",
+        "size_tier_zh": "Large Bulky (0–50 lb)",
+        "max_weight_oz": 800,
+        "base_fee_usd": 9.35,
+        "per_lb_over_usd": 0.38,
+        "over_start_lb": 1.0,
+        "oversize": true,
+        "estimated": false
+      },
+      {
+        "tier_key": "xl1",
+        "size_tier": "Extra-Large (0–50 lb)",
+        "size_tier_zh": "Extra-Large (0–50 lb)",
+        "max_weight_oz": 800,
+        "base_fee_usd": 26.33,
+        "per_lb_over_usd": 0.38,
+        "over_start_lb": 1.0,
+        "oversize": true,
+        "estimated": false
+      },
+      {
+        "tier_key": "xl2",
+        "size_tier": "Extra-Large (50–70 lb)",
+        "size_tier_zh": "Extra-Large (50–70 lb)",
+        "max_weight_oz": 1120,
+        "base_fee_usd": 37.32,
+        "per_lb_over_usd": 0.75,
+        "over_start_lb": 51.0,
+        "oversize": true,
+        "estimated": false
+      },
+      {
+        "tier_key": "xl3",
+        "size_tier": "Extra-Large (70–150 lb)",
+        "size_tier_zh": "Extra-Large (70–150 lb)",
+        "max_weight_oz": 2400,
+        "base_fee_usd": 51.32,
+        "per_lb_over_usd": 0.75,
+        "over_start_lb": 71.0,
+        "oversize": true,
+        "estimated": false
+      },
+      {
+        "tier_key": "xl4",
+        "size_tier": "Extra-Large (150+ lb)",
+        "size_tier_zh": "Extra-Large (150+ lb)",
+        "max_weight_oz": 99999,
+        "base_fee_usd": 194.95,
+        "per_lb_over_usd": 0.19,
+        "over_start_lb": 151.0,
+        "oversize": true,
+        "estimated": false
+      }
+    ],
+    "monthly_storage_per_cuft": {
+      "standard": {
+        "jan_sep": 0.78,
+        "oct_dec": 2.4
+      },
+      "oversize": {
+        "jan_sep": 0.56,
+        "oct_dec": 1.4
+      }
+    },
+    "aged_inventory_surcharge_per_cuft": [
+      {
+        "days": "181-210",
+        "start_day": 181,
+        "end_day": 210,
+        "rate_usd": 0.5,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "211-240",
+        "start_day": 211,
+        "end_day": 240,
+        "rate_usd": 1,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "241-270",
+        "start_day": 241,
+        "end_day": 270,
+        "rate_usd": 1.5,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "271-300",
+        "start_day": 271,
+        "end_day": 300,
+        "rate_usd": 5.45,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "301-330",
+        "start_day": 301,
+        "end_day": 330,
+        "rate_usd": 5.7,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "331-365",
+        "start_day": 331,
+        "end_day": 365,
+        "rate_usd": 5.9,
+        "per_unit_min_usd": null
+      },
+      {
+        "days": "366-455",
+        "start_day": 366,
+        "end_day": 455,
+        "rate_usd": 6.9,
+        "per_unit_min_usd": 0.3
+      },
+      {
+        "days": "456+",
+        "start_day": 456,
+        "end_day": null,
+        "rate_usd": 7.9,
+        "per_unit_min_usd": 0.35
+      }
+    ],
+    "aged_inventory_surcharge_note": "AIS is charged IN ADDITION to the monthly storage fee, not instead of it. Bands 181-270 exclude clothing, footwear, bags, jewelry and watches. On the 366-455 and 456+ bands Amazon charges the GREATER of the per-cu-ft rate and the per_unit_min_usd, so a per-cu-ft-only model understates long-stored small items.",
+    "inbound_placement": [
+      {
+        "option": "None",
+        "standard_unit_usd": 0,
+        "oversize_unit_usd": 0
+      },
+      {
+        "option": "Minimal placement ($0.15–$0.50)",
+        "standard_unit_usd": 0.15,
+        "oversize_unit_usd": 0.3
+      },
+      {
+        "option": "Partial placement ($0.35–$0.98)",
+        "standard_unit_usd": 0.35,
+        "oversize_unit_usd": 0.75
+      },
+      {
+        "option": "Small parcel ($0.10)",
+        "standard_unit_usd": 0.1,
+        "oversize_unit_usd": 0.1
+      }
+    ],
+    "return_processing_fees": [
+      {
+        "size_tier": "Small Standard (<6 oz)",
+        "per_unit_usd": 1.9,
+        "per_lb_over_usd": null
+      },
+      {
+        "size_tier": "Large Standard (6 oz–1 lb)",
+        "per_unit_usd": 3.39,
+        "per_lb_over_usd": null
+      },
+      {
+        "size_tier": "Large Standard (1–2 lb)",
+        "per_unit_usd": 4.63,
+        "per_lb_over_usd": null
+      },
+      {
+        "size_tier": "Large Standard (2–3 lb)",
+        "per_unit_usd": 4.73,
+        "per_lb_over_usd": null
+      },
+      {
+        "size_tier": "Large Standard (3–20 lb)",
+        "per_unit_usd": 5,
+        "per_lb_over_usd": 0.05
+      },
+      {
+        "size_tier": "Small Bulky (0–50 lb)",
+        "per_unit_usd": 5,
+        "per_lb_over_usd": 0.05
+      },
+      {
+        "size_tier": "Large Bulky (0–50 lb)",
+        "per_unit_usd": 5,
+        "per_lb_over_usd": 0.05
+      }
+    ],
+    "low_inventory_level_fee": {
+      "applies_to": [
+        "Small standard (up to 16 oz)",
+        "Large standard (up to 3 lb)",
+        "Large standard (3+ lb to 20 lb)",
+        "Small Bulky (up to 50 lb)",
+        "Large Bulky (up to 50 lb)"
+      ],
+      "unit": "USD per shipped unit, charged IN ADDITION to the FBA fulfillment fee",
+      "trigger": "charged only when BOTH the long-term (90-day) and short-term (30-day) historical days of supply are below 28; the tier uses the GREATER of the two",
+      "metric": "average daily inventory units on hand / average daily shipped units, per FNSKU, refreshed weekly",
+      "bands": [
+        "0<=days<14",
+        "14<=days<21",
+        "21<=days<28"
+      ],
+      "rate_usd_by_size_tier": {
+        "Small standard (up to 16 oz)": [
+          0.89,
+          0.63,
+          0.32
+        ],
+        "Large standard (up to 3 lb)": [
+          0.97,
+          0.7,
+          0.36
+        ],
+        "Large standard (3+ lb to 20 lb)": [
+          1.11,
+          0.87,
+          0.47
+        ],
+        "Small Bulky (up to 50 lb)": [
+          1.85,
+          1.02,
+          0.51
+        ],
+        "Large Bulky (up to 50 lb)": [
+          2.09,
+          1.15,
+          0.57
+        ]
+      },
+      "note": "A product with zero shipped units in the window has an undefined days-of-supply, which Amazon treats as above 28 -> not charged. Do not model it as days=0.",
+      "verified_on": "2026-09-15",
+      "source": "https://sellercentral.amazon.com/help/hub/reference/external/GV43F6S76Y9DHYRH"
+    },
+    "peak_fulfillment": {
+      "unit": "USD per shipped unit, charged IN ADDITION to the non-peak fulfilment fee",
+      "start_date": "2026-10-15",
+      "end_date": "2027-01-14",
+      "resume_date": "2027-01-15",
+      "basis": "ship-date",
+      "avg_per_unit_usd": 0.32,
+      "avg_per_unit_note": "Amazon's headline '~$0.32 per unit' is a network-wide blended average. It is NOT the uplift for any single SKU - read uplift_usd_by_tier.",
+      "applies_to_programs": [
+        "FBA",
+        "Remote Fulfillment with FBA",
+        "MCF",
+        "Buy with Prime"
+      ],
+      "uplift_usd_by_tier": {
+        "ss": 0.2,
+        "ls1": 0.29,
+        "ls2": 0.33,
+        "ls3": 0.41,
+        "ls4": 0.54,
+        "so": 1.04,
+        "lo": 1.04,
+        "xl1": 2.73,
+        "xl2": 2.81,
+        "xl3": 4.42,
+        "xl4": 8.51
+      },
+      "uplift_usd_by_tier_apparel": {
+        "ss": 0.25,
+        "ls1": 0.34,
+        "ls2": 0.39,
+        "ls3": 0.46,
+        "ls4": 0.67,
+        "so": 1.04,
+        "lo": 1.04,
+        "xl1": 2.73,
+        "xl2": 2.81,
+        "xl3": 4.42,
+        "xl4": 8.51
+      },
+      "over_rate_applies": true,
+      "composition_order": "(non-peak base + extra-weight overage + peak uplift) x (1 + fuel_surcharge). NOT (fee x 1.035) + uplift.",
+      "amazon_shipping_schedule_note": "Amazon Shipping (FBM) runs a separately dated schedule (2026-10-25 to 2027-01-16, shoulder 0.5 / peak 0.75). Do not reuse the FBA numbers for it.",
+      "source": "Amazon US FBA 2026 holiday peak fulfilment fee rate card"
+    },
+    "return_policy": {
+      "fba_fee_reimbursed": false,
+      "referral_fee_reimbursed": true,
+      "refund_admin_fee_pct": 0.2,
+      "refund_admin_fee_cap_usd": 5,
+      "processing_fee_basis": "above-threshold",
+      "apparel_threshold": 0,
+      "min_units_for_exemption": 25,
+      "note": "The FBA fulfilment fee is NOT refunded when a unit comes back, so a return wastes the fulfilment already paid on that unit. The referral fee IS credited back, minus a refund administration fee of 20% capped at $5.00. If fulfilment is already modelled as a per-unit fee on every shipped unit, the incremental return cost is the admin fee plus (where the category threshold is met) the returns processing fee - do NOT add the fulfilment fee a second time. Returns processing fees apply to units ABOVE the category threshold; apparel and footwear are 0%, so every returned unit pays there. Categories under 25 shipped units in a month are exempt."
+    },
+    "storage_peak": {
+      "starts_on": "2026-10-01",
+      "reverts_on": "2027-01-01",
+      "awd_off_peak_through": "2026-10-31",
+      "std_multiplier": 3.0769,
+      "oversize_multiplier": 2.5,
+      "note": "Storage peaks Oct 1 and reverts Jan 1; fulfilment peaks Oct 15 and reverts Jan 15. The two windows overlap for only ~2.5 months, not a clean quarter - model them separately or a Q4 estimate will not reconcile to the Fee Preview report."
+    }
+  },
+  "worked_example": {
+    "note": "Reproducibility check — recompute this with the JSON and you must get the same answer.",
+    "product": {
+      "price_usd": 25.99,
+      "category": "Home & Kitchen",
+      "size_tier": "Large Standard (6 oz\\u20131 lb)",
+      "inbound": "Partial placement"
+    },
+    "expected": {
+      "referral_fee": 3.9,
+      "fulfillment_fee": 4.76,
+      "inbound_fee": 0.35,
+      "note": "off-peak: fulfilment = 4.60 x 1.035 fuel surcharge"
+    },
+    "peak_counterpart": {
+      "product": {
+        "price_usd": 25.99,
+        "category": "Home & Kitchen",
+        "size_tier": "Large Standard (6 oz\\u20131 lb)",
+        "tier_key": "ls1",
+        "ship_date": "2026-11-15"
+      },
+      "expected": {
+        "base_fee": 4.6,
+        "peak_uplift": 0.29,
+        "subtotal": 4.89,
+        "fuel_surcharge": 0.17,
+        "fulfillment_total": 5.06,
+        "delta_vs_off_peak_usd": 0.3,
+        "note": "(4.60 + 0.29) x 1.035 = 5.06 - the uplift is itself surcharged"
+      }
+    }
+  }
+}
