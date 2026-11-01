@@ -1,6 +1,13 @@
 {
   "snapshots": [
     {
+      "month": "2026-11",
+      "captured": "2026-11-02",
+      "us_version": "2026.09.4",
+      "eu_version": "2026.10.0",
+      "url": "https://ylishi.tools/rates/snapshots/2026-11.json"
+    },
+    {
       "month": "2026-10",
       "captured": "2026-10-01",
       "us_version": "2026.09.4",
@@ -23,5 +30,5 @@
       "url": "https://ylishi.tools/rates/snapshots/2026-08.json"
     }
   ],
-  "latest": "2026-10"
+  "latest": "2026-11"
 }
