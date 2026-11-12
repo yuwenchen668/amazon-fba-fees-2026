@@ -13,7 +13,7 @@
       "import_duty": "2026-07-01",
       "customs_handling": "2026-11-01"
     },
-    "last_verified": "2026-10-31",
+    "last_verified": "2026-11-02",
     "publisher": {
       "name": "ylishi.tools",
       "url": "https://ylishi.tools/annual-fba-report/"
@@ -73,7 +73,7 @@
     },
     "canonical_json": "https://ylishi.tools/rates/fba-eu-2026.json",
     "note": "EU 2026 change: Amazon CUT fulfillment fees (UK -£0.26, DE -€0.32 typical) and slashed low-price apparel referral (≤€15: 8%→5%, €15-20: 15%→10%) — opposite of the US 3.5% fuel surcharge. Jan-5 batch: Home 15%→8% ≤€20 (new cat), Pet Clothing & Food 15%→5% ≤€10, Grocery & Gourmet and Vitamins/Minerals/Supplements 8%→5% ≤€10 (new cat), Low-price FBA extended to ≤€20.",
-    "source_sha256_16": "50aac42ca5efaf51"
+    "source_sha256_16": "258eea7468472968"
   },
   "rates": {
     "fulfillment_fees_official_2026": {

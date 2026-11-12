@@ -1,0 +1,1485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "dataset": {
+    "id": "ylishi-fba-us-2027",
+    "name": "Amazon US FBA Fee Rates 2027",
+    "description": "Amazon US Fulfillment by Amazon (FBA) fee schedule announced 2026-11-05, effective 2027-01-15. Separate file from fba-us-2026.json ON PURPOSE: the 2027 card re-prices by BOTH weight rung and price band ($10/$50 cut-offs), restructures bulky into 4 tiers and oversized into 6 tiers, and narrows Low-Price FBA eligibility. The 2026 file is a flat base_fee per tier and must NOT be mutated to hold this shape.",
+    "version": "2027.11.12",
+    "effective_dates": {
+      "rate_card": "2027-01-15",
+      "peak_fulfillment_reverts": "2027-01-15",
+      "low_inventory_level_fee": "February 1 (year not stated in source; 2027 assumed — verify)",
+      "unified_storage": "2027-02-01",
+      "low_price_eligibility_cut": "2027-01-15",
+      "apparel_low_price_cut": "2027-01-15",
+      "other_categories_low_price_cut": "2027-02-01",
+      "note": "2027-01-15 is both the last day of the 2026-27 peak window and the first day of this card, which is why every caller must pass a ship date."
+    },
+    "last_verified": "2026-11-12",
+    "verified_by": "Browser-rendered scrape of the official help page (the page is JS-rendered; curl returns a 171 KB shell with no rates). Every number in rates.fulfillment_fees_standard and rates.fulfillment_fees_standard_apparel was compared cell-by-cell against the page: 21/21 standard rows x 3 price bands x 2 cards, zero mismatches.",
+    "publisher": {
+      "name": "ylishi.tools",
+      "url": "https://ylishi.tools/annual-fba-report/"
+    },
+    "sources": [
+      {
+        "name": "Amazon Seller Central — 2027 US FBA fulfillment fee changes (title verified 2026-11-12 as “2027 年美国亚马逊物流配送费用变更”)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW"
+      },
+      {
+        "name": "Amazon Seller Central — product size tiers (dimension thresholds for the 2027 bulky/oversized split)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W"
+      },
+      {
+        "name": "Amazon Selling Partners — 2027 fee update announcement (page carries 2026-11-05)",
+        "url": "https://sellingpartners.aboutamazon.com/"
+      }
+    ],
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Data: ylishi.tools (https://ylishi.tools/annual-fba-report/), CC BY 4.0"
+    },
+    "how_to_cite": "ylishi.tools, \"Amazon US FBA Fee Rates 2027\" (dataset v2027.11.1, verified 2026-11-12), https://ylishi.tools/rates/fba-us-2027.json, CC BY 4.0",
+    "coverage": {
+      "marketplace": "amazon.com (US)",
+      "currency": "USD",
+      "rate_card_effective": "2027-01-15",
+      "size_tiers_standard": 5,
+      "weight_rungs": 21,
+      "bulky_tiers": 4,
+      "oversized_tiers": 6,
+      "price_bands": [
+        "<$10",
+        "$10-$50",
+        ">$50"
+      ],
+      "known_gaps": [
+        "RESOLVED 2026-11-12: bulky 4-tier and oversized 6-tier dimension cut-offs are now sourced (rates.size_tier_definitions_2027, validated 9/9 against official worked examples)",
+        "standard-size DANGEROUS GOODS table not evidenced on the official page (only bulky/oversized DG tables exist)",
+        "referral fees, storage, inbound placement and return processing are NOT restated here — read them from fba-us-2026.json",
+        "no separate 2027 peak table exists: fees revert to non-peak on 2027-01-15"
+      ],
+      "dangerous_goods_tiers": 10
+    },
+    "canonical_json": "https://ylishi.tools/rates/fba-us-2027.json",
+    "related": {
+      "prior_card": "https://ylishi.tools/rates/fba-us-2026.json"
+    },
+    "note_v2027_11_2": "Cross-checked against the full official page table (all 8 tables) and against the three worked examples on the page: 21/21 non-apparel rows, 21/21 apparel rows and 10/10 bulky-oversized rows match cell-for-cell; the worked examples additionally pin the excess-weight rounding rule to ceil-to-whole-pound."
+  },
+  "rates": {
+    "fuel_surcharge_on_fulfillment": {
+      "rate": 0.035,
+      "effective": "2026-04-17",
+      "status_2027": "unchanged — the 2027 page carries the same 3.5% fuel and logistics surcharge text; it is charged on the fulfillment fee, not the sale price",
+      "applies_to_2027": [
+        "FBA",
+        "Remote Fulfillment with FBA",
+        "MCF",
+        "Buy with Prime",
+        "PanAmericas (from 2027-01-15)",
+        "AWD transit / MCD (from 2027-02-01)"
+      ]
+    },
+    "fulfillment_fees_standard": [
+      {
+        "tier_key": "ss",
+        "size_tier": "Small Standard",
+        "max_weight_oz": 16.0,
+        "ladder": [
+          {
+            "max_weight_oz": 2.0,
+            "weight_band": "不超过 2 盎司",
+            "price_lt_10_usd": 2.64,
+            "price_10_50_usd": 3.75,
+            "price_gt_50_usd": 4.31
+          },
+          {
+            "max_weight_oz": 4.0,
+            "weight_band": "2~4 盎司（不含 2 盎司）",
+            "price_lt_10_usd": 2.72,
+            "price_10_50_usd": 3.78,
+            "price_gt_50_usd": 4.34
+          },
+          {
+            "max_weight_oz": 6.0,
+            "weight_band": "4~6 盎司（不含 4 盎司）",
+            "price_lt_10_usd": 2.8,
+            "price_10_50_usd": 3.92,
+            "price_gt_50_usd": 4.47
+          },
+          {
+            "max_weight_oz": 8.0,
+            "weight_band": "6~8 盎司（不含 6 盎司）",
+            "price_lt_10_usd": 2.83,
+            "price_10_50_usd": 3.97,
+            "price_gt_50_usd": 4.53
+          },
+          {
+            "max_weight_oz": 10.0,
+            "weight_band": "8~10 盎司（不含 8 盎司）",
+            "price_lt_10_usd": 2.87,
+            "price_10_50_usd": 4.06,
+            "price_gt_50_usd": 4.62
+          },
+          {
+            "max_weight_oz": 12.0,
+            "weight_band": "10~12 盎司（不含 10 盎司）",
+            "price_lt_10_usd": 2.92,
+            "price_10_50_usd": 4.16,
+            "price_gt_50_usd": 4.73
+          },
+          {
+            "max_weight_oz": 14.0,
+            "weight_band": "12~14 盎司（不含 12 盎司）",
+            "price_lt_10_usd": 2.96,
+            "price_10_50_usd": 4.3,
+            "price_gt_50_usd": 4.85
+          },
+          {
+            "max_weight_oz": 16.0,
+            "weight_band": "14~16 盎司（不含 14 盎司）",
+            "price_lt_10_usd": 2.99,
+            "price_10_50_usd": 4.32,
+            "price_gt_50_usd": 4.88
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls1",
+        "size_tier": "Large Standard (6 oz–1 lb)",
+        "max_weight_oz": 16.0,
+        "ladder": [
+          {
+            "max_weight_oz": 4.0,
+            "weight_band": "不超过 4 盎司",
+            "price_lt_10_usd": 2.91,
+            "price_10_50_usd": 3.79,
+            "price_gt_50_usd": 4.35
+          },
+          {
+            "max_weight_oz": 8.0,
+            "weight_band": "4~8 盎司（不含 4 盎司）",
+            "price_lt_10_usd": 3.13,
+            "price_10_50_usd": 4.01,
+            "price_gt_50_usd": 4.57
+          },
+          {
+            "max_weight_oz": 12.0,
+            "weight_band": "8~12 盎司（不含 8 盎司）",
+            "price_lt_10_usd": 3.38,
+            "price_10_50_usd": 4.26,
+            "price_gt_50_usd": 4.83
+          },
+          {
+            "max_weight_oz": 16.0,
+            "weight_band": "12~16 盎司（不含 12 盎司）",
+            "price_lt_10_usd": 3.78,
+            "price_10_50_usd": 4.67,
+            "price_gt_50_usd": 5.23
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls2",
+        "size_tier": "Large Standard (1–2 lb)",
+        "max_weight_oz": 32.0,
+        "ladder": [
+          {
+            "max_weight_oz": 20.0,
+            "weight_band": "1~1.25 磅（不含 1 磅）",
+            "price_lt_10_usd": 4.22,
+            "price_10_50_usd": 5.19,
+            "price_gt_50_usd": 5.75
+          },
+          {
+            "max_weight_oz": 24.0,
+            "weight_band": "1.25~1.5 磅（不含 1.25 磅）",
+            "price_lt_10_usd": 4.6,
+            "price_10_50_usd": 5.57,
+            "price_gt_50_usd": 6.14
+          },
+          {
+            "max_weight_oz": 28.0,
+            "weight_band": "1.5~1.75 磅（不含 1.5 磅）",
+            "price_lt_10_usd": 4.75,
+            "price_10_50_usd": 5.72,
+            "price_gt_50_usd": 6.29
+          },
+          {
+            "max_weight_oz": 32.0,
+            "weight_band": "1.75~2 磅（不含 1.75 磅）",
+            "price_lt_10_usd": 5.0,
+            "price_10_50_usd": 5.98,
+            "price_gt_50_usd": 6.54
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls3",
+        "size_tier": "Large Standard (2–3 lb)",
+        "max_weight_oz": 48.0,
+        "ladder": [
+          {
+            "max_weight_oz": 36.0,
+            "weight_band": "2~2.25 磅（不含 2 磅）",
+            "price_lt_10_usd": 5.1,
+            "price_10_50_usd": 6.08,
+            "price_gt_50_usd": 6.64
+          },
+          {
+            "max_weight_oz": 40.0,
+            "weight_band": "2.25~2.5 磅（不含 2.25 磅）",
+            "price_lt_10_usd": 5.28,
+            "price_10_50_usd": 6.26,
+            "price_gt_50_usd": 6.83
+          },
+          {
+            "max_weight_oz": 44.0,
+            "weight_band": "2.5~2.75 磅（不含 2.5 磅）",
+            "price_lt_10_usd": 5.44,
+            "price_10_50_usd": 6.42,
+            "price_gt_50_usd": 6.99
+          },
+          {
+            "max_weight_oz": 48.0,
+            "weight_band": "2.75~3 磅（不含 2.75 磅）",
+            "price_lt_10_usd": 5.85,
+            "price_10_50_usd": 6.85,
+            "price_gt_50_usd": 7.41
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls4",
+        "size_tier": "Large Standard (3–20 lb)",
+        "max_weight_oz": 320.0,
+        "ladder": [
+          {
+            "max_weight_oz": 320.0,
+            "weight_band": "3~20 磅（不含 3 磅）",
+            "price_lt_10_usd": 6.15,
+            "price_10_50_usd": 7.16,
+            "price_gt_50_usd": 7.73,
+            "overage": {
+              "per_usd": 0.08,
+              "start_lb": 3,
+              "unit": "4 盎司",
+              "unit_oz": 4
+            }
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      }
+    ],
+    "fulfillment_fees_standard_apparel": [
+      {
+        "tier_key": "ss",
+        "size_tier": "Small Standard — apparel",
+        "max_weight_oz": 16.0,
+        "ladder": [
+          {
+            "max_weight_oz": 2.0,
+            "weight_band": "不超过 2 盎司",
+            "price_lt_10_usd": 2.83,
+            "price_10_50_usd": 3.92,
+            "price_gt_50_usd": 4.54
+          },
+          {
+            "max_weight_oz": 4.0,
+            "weight_band": "2~4 盎司（不含 2 盎司）",
+            "price_lt_10_usd": 2.85,
+            "price_10_50_usd": 3.95,
+            "price_gt_50_usd": 4.57
+          },
+          {
+            "max_weight_oz": 6.0,
+            "weight_band": "4~6 盎司（不含 4 盎司）",
+            "price_lt_10_usd": 2.9,
+            "price_10_50_usd": 4.01,
+            "price_gt_50_usd": 4.62
+          },
+          {
+            "max_weight_oz": 8.0,
+            "weight_band": "6~8 盎司（不含 6 盎司）",
+            "price_lt_10_usd": 3.03,
+            "price_10_50_usd": 4.11,
+            "price_gt_50_usd": 4.72
+          },
+          {
+            "max_weight_oz": 10.0,
+            "weight_band": "8~10 盎司（不含 8 盎司）",
+            "price_lt_10_usd": 3.17,
+            "price_10_50_usd": 4.25,
+            "price_gt_50_usd": 4.74
+          },
+          {
+            "max_weight_oz": 12.0,
+            "weight_band": "10~12 盎司（不含 10 盎司）",
+            "price_lt_10_usd": 3.27,
+            "price_10_50_usd": 4.43,
+            "price_gt_50_usd": 4.92
+          },
+          {
+            "max_weight_oz": 14.0,
+            "weight_band": "12~14 盎司（不含 12 盎司）",
+            "price_lt_10_usd": 3.38,
+            "price_10_50_usd": 4.55,
+            "price_gt_50_usd": 5.03
+          },
+          {
+            "max_weight_oz": 16.0,
+            "weight_band": "14~16 盎司（不含 14 盎司）",
+            "price_lt_10_usd": 3.48,
+            "price_10_50_usd": 4.6,
+            "price_gt_50_usd": 5.08
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls1",
+        "size_tier": "Large Standard (6 oz–1 lb) — apparel",
+        "max_weight_oz": 16.0,
+        "ladder": [
+          {
+            "max_weight_oz": 4.0,
+            "weight_band": "不超过 4 盎司",
+            "price_lt_10_usd": 3.53,
+            "price_10_50_usd": 4.36,
+            "price_gt_50_usd": 4.93
+          },
+          {
+            "max_weight_oz": 8.0,
+            "weight_band": "4~8 盎司（不含 4 盎司）",
+            "price_lt_10_usd": 3.74,
+            "price_10_50_usd": 4.57,
+            "price_gt_50_usd": 5.13
+          },
+          {
+            "max_weight_oz": 12.0,
+            "weight_band": "8~12 盎司（不含 8 盎司）",
+            "price_lt_10_usd": 3.96,
+            "price_10_50_usd": 4.79,
+            "price_gt_50_usd": 5.35
+          },
+          {
+            "max_weight_oz": 16.0,
+            "weight_band": "12~16 盎司（不含 12 盎司）",
+            "price_lt_10_usd": 4.42,
+            "price_10_50_usd": 5.25,
+            "price_gt_50_usd": 5.81
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls2",
+        "size_tier": "Large Standard (1–2 lb) — apparel",
+        "max_weight_oz": 32.0,
+        "ladder": [
+          {
+            "max_weight_oz": 20.0,
+            "weight_band": "1~1.25 磅（不含 1 磅）",
+            "price_lt_10_usd": 5.13,
+            "price_10_50_usd": 5.96,
+            "price_gt_50_usd": 6.52
+          },
+          {
+            "max_weight_oz": 24.0,
+            "weight_band": "1.25~1.5 磅（不含 1.25 磅）",
+            "price_lt_10_usd": 5.3,
+            "price_10_50_usd": 6.13,
+            "price_gt_50_usd": 6.69
+          },
+          {
+            "max_weight_oz": 28.0,
+            "weight_band": "1.5~1.75 磅（不含 1.5 磅）",
+            "price_lt_10_usd": 5.4,
+            "price_10_50_usd": 6.23,
+            "price_gt_50_usd": 6.8
+          },
+          {
+            "max_weight_oz": 32.0,
+            "weight_band": "1.75~2 磅（不含 1.75 磅）",
+            "price_lt_10_usd": 5.51,
+            "price_10_50_usd": 6.34,
+            "price_gt_50_usd": 6.91
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls3",
+        "size_tier": "Large Standard (2–3 lb) — apparel",
+        "max_weight_oz": 48.0,
+        "ladder": [
+          {
+            "max_weight_oz": 36.0,
+            "weight_band": "2~2.25 磅（不含 2 磅）",
+            "price_lt_10_usd": 5.87,
+            "price_10_50_usd": 6.7,
+            "price_gt_50_usd": 7.26
+          },
+          {
+            "max_weight_oz": 40.0,
+            "weight_band": "2.25~2.5 磅（不含 2.25 磅）",
+            "price_lt_10_usd": 5.99,
+            "price_10_50_usd": 6.82,
+            "price_gt_50_usd": 7.38
+          },
+          {
+            "max_weight_oz": 44.0,
+            "weight_band": "2.5~2.75 磅（不含 2.5 磅）",
+            "price_lt_10_usd": 6.04,
+            "price_10_50_usd": 6.87,
+            "price_gt_50_usd": 7.44
+          },
+          {
+            "max_weight_oz": 48.0,
+            "weight_band": "2.75~3 磅（不含 2.75 磅）",
+            "price_lt_10_usd": 6.17,
+            "price_10_50_usd": 7.0,
+            "price_gt_50_usd": 7.57
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      },
+      {
+        "tier_key": "ls4",
+        "size_tier": "Large Standard (3–20 lb) — apparel",
+        "max_weight_oz": 320.0,
+        "ladder": [
+          {
+            "max_weight_oz": 320.0,
+            "weight_band": "3~20 磅（不含 3 磅）",
+            "price_lt_10_usd": 6.24,
+            "price_10_50_usd": 7.07,
+            "price_gt_50_usd": 7.64,
+            "overage": {
+              "per_usd": 0.16,
+              "start_lb": 3,
+              "unit": "半磅",
+              "unit_oz": 8
+            }
+          }
+        ],
+        "note": "The 2027 card prices by BOTH weight rung and price band; the 2026 file exposed one base_fee_usd per tier. Use ladder[].price_10_50_usd as the default and price_lt_10_usd / price_gt_50_usd for the outer bands."
+      }
+    ],
+    "fulfillment_fees_bulky_oversized": [
+      {
+        "tier_key": "big_small",
+        "size_tier_zh": "小号大件",
+        "weight_band_zh": "0 至 50 磅",
+        "price_lt_10_usd": 6.73,
+        "price_10_50_usd": 7.51,
+        "price_gt_50_usd": 7.51,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "big_medium",
+        "size_tier_zh": "中号大件",
+        "weight_band_zh": "0 至 50 磅",
+        "price_lt_10_usd": 6.88,
+        "price_10_50_usd": 7.66,
+        "price_gt_50_usd": 7.66,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "big_large",
+        "size_tier_zh": "大号大件",
+        "weight_band_zh": "0 至 50 磅",
+        "price_lt_10_usd": 9.09,
+        "price_10_50_usd": 9.88,
+        "price_gt_50_usd": 9.88,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "big_xlarge",
+        "size_tier_zh": "超大号大件",
+        "weight_band_zh": "0 至 50 磅",
+        "price_lt_10_usd": 9.31,
+        "price_10_50_usd": 10.09,
+        "price_gt_50_usd": 10.09,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_small",
+        "size_tier_zh": "小型超大件",
+        "weight_band_zh": "0 至 50 磅",
+        "price_lt_10_usd": 13.44,
+        "price_10_50_usd": 14.22,
+        "price_gt_50_usd": 14.22,
+        "overage": {
+          "per_usd": 0.28,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_medium",
+        "size_tier_zh": "中型超大件",
+        "weight_band_zh": "0 至 70 磅",
+        "price_lt_10_usd": 27.36,
+        "price_10_50_usd": 28.15,
+        "price_gt_50_usd": 28.15,
+        "overage": {
+          "per_usd": 0.56,
+          "start_lb": 51,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 51
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_large",
+        "size_tier_zh": "大型超大件",
+        "weight_band_zh": "0 至 150 磅",
+        "price_lt_10_usd": 37.97,
+        "price_10_50_usd": 38.75,
+        "price_gt_50_usd": 38.75,
+        "overage": {
+          "per_usd": 0.68,
+          "start_lb": 51,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 51
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_long",
+        "size_tier_zh": "长型超大件",
+        "weight_band_zh": "0 至 150 磅",
+        "price_lt_10_usd": 62.97,
+        "price_10_50_usd": 63.75,
+        "price_gt_50_usd": 63.75,
+        "overage": {
+          "per_usd": 0.3,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_light_special",
+        "size_tier_zh": "轻型特殊超大件",
+        "weight_band_zh": "0 至 150 磅",
+        "price_lt_10_usd": 71.09,
+        "price_10_50_usd": 71.87,
+        "price_gt_50_usd": 71.87,
+        "overage": {
+          "per_usd": 0.3,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 1
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      },
+      {
+        "tier_key": "xl_heavy_special",
+        "size_tier_zh": "重型特殊超大件1",
+        "weight_band_zh": "150 磅以上",
+        "price_lt_10_usd": 190.5,
+        "price_10_50_usd": 191.28,
+        "price_gt_50_usd": 191.28,
+        "overage": {
+          "per_usd": 0.19,
+          "start_lb": 151,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "excess weight is rounded UP to the next whole pound (ceil). Verified against all three official worked examples on the page: 7.90 lb -> 7 lb over, 46.23 lb -> 46 lb over, 65.47 lb -> 15 lb over.",
+          "base_included_lb": 151
+        },
+        "dimension_thresholds": null,
+        "dimension_thresholds_source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+        "pending": "DIMENSION THRESHOLDS NOT SOURCED — the 2027 card splits bulky into 4 tiers and oversized into 6 tiers, selected by longest side / length + girth, not by weight. Until those cut-offs are read from GG5KW835AHDJCH8W, a weight-only quote cannot choose the right tier. Fees below ARE official for 2027-01-15."
+      }
+    ],
+    "low_price_fba_eligibility": {
+      "effective": "2027-01-15",
+      "rule": "From 2027-01-15 a <$10 item in an EXCLUDED fee category loses the Low-Price FBA rate and is billed at the $10-$50 rate instead.",
+      "excluded_categories_official": [
+        "汽车和户外动力设备 (Automotive & Power Sports)",
+        "小型电器 (Small Appliances)",
+        "乐器和影音制作 (Musical Instruments & AV Production)",
+        "媒介类商品 - 图书、DVD、音乐、软件和视频 (Media - Books, DVD, Music, Software, Video)",
+        "电脑 (Computers)"
+      ],
+      "mapper_note": "ylishi maps 4 of the 5 to CATEGORIES keys (automotive / musical / books / software). Small Appliances and Computers have no key in the 2026 category list — those two are NOT enforceable until a category exists."
+    },
+    "changes_vs_2026": {
+      "standard_avg_change_usd": {
+        "lt10_small": "+0.20",
+        "gt50_small": "+0.70",
+        "lt10_large_nonapparel": "0 (unchanged)",
+        "lt10_large_apparel": "+0.08"
+      },
+      "bulky_restructure": "2026 had 2 bulky tiers (Small/Large Bulky). 2027 splits them into 4: 小号大件 / 中号大件 / 大号大件 / 超大号大件.",
+      "oversized_restructure": "2026 had 4 oversized tiers. 2027 splits them into 6: 小型超大件 / 中型超大件 / 大型超大件 / 长型超大件 / 轻型特殊超大件 / 重型特殊超大件.",
+      "handling_fee_change": "From 2027-01-15 the extra-large handling fee (2026: $17/$21/$25 by weight band) is RETIRED. Replaced by two dimension-based fees that can stack: flat-item handling ($8.40-$29.53) when shortest side <4in AND second-longest >=25in, and protruding-item handling ($3.45-$10.45) when second-longest >43in. A single item can now pay both.",
+      "low_inventory_fee": "From February 1 (YEAR NOT STATED in the official text — 2027 assumed from context, verify before quoting) charged only when stock is below 28 days of cover based on actual shipments in the 4 weeks either side of the assessment date.",
+      "unified_storage": "From 2027-02-01 the storage-utilisation surcharge is retired and aged-inventory surcharges fold into a single age-tiered monthly storage rate (>6 months rises, <6 months flat or lower)."
+    },
+    "not_restated_here": [
+      "referral_fees",
+      "monthly_storage_per_cuft",
+      "aged_inventory_surcharge",
+      "inbound_placement",
+      "return_processing_fees"
+    ],
+    "billable_weight_rule": {
+      "official_text_zh": "体积重量等于单件商品体积（长 x 宽 x 高）除以 139。对于大件商品和超大件商品，我们假定最小宽度和高度为 2 英寸。对于所有大号标准尺寸、大件和超大件商品（特殊超大件重型商品除外），如果体积重量大于单件商品重量，我们将按体积重量计算费用。小号标准尺寸和特殊超大件重型商品将按单件商品重量计算费用。",
+      "dim_weight_divisor": 139,
+      "dim_weight_formula": "长(in) x 宽(in) x 高(in) / 139, result in lb",
+      "min_w_h_for_bulky_in": 2,
+      "billable": "max(unit weight, dimensional weight)",
+      "exceptions_billed_on_unit_weight_only": [
+        "Small Standard",
+        "Special Oversize Heavy (重型特殊超大件)"
+      ],
+      "why_it_matters": "A calculator that asks only for \"shipping weight\" under-quotes every Large Standard / bulky / oversized item whenever the carton is light and bulky. The three official worked examples all use dimensional weight, not unit weight, as the billable figure."
+    },
+    "fulfillment_fees_bulky_oversized_dangerous_goods": [
+      {
+        "tier_key": "big_small",
+        "size_tier_zh": "小号大件",
+        "official_row_label_as_published": "小号大件",
+        "price_lt_10_usd": 7.46,
+        "price_10_50_usd": 8.24,
+        "price_gt_50_usd": 8.24,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "big_medium",
+        "size_tier_zh": "中号大件",
+        "official_row_label_as_published": "中号大件",
+        "price_lt_10_usd": 7.61,
+        "price_10_50_usd": 8.39,
+        "price_gt_50_usd": 8.39,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "big_large",
+        "size_tier_zh": "大号大件",
+        "official_row_label_as_published": "大号大件",
+        "price_lt_10_usd": 9.83,
+        "price_10_50_usd": 10.61,
+        "price_gt_50_usd": 10.61,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "big_xlarge",
+        "size_tier_zh": "超大号大件",
+        "official_row_label_as_published": "超大件",
+        "price_lt_10_usd": 10.04,
+        "price_10_50_usd": 10.82,
+        "price_gt_50_usd": 10.82,
+        "overage": {
+          "per_usd": 0.39,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_small",
+        "size_tier_zh": "小型超大件",
+        "official_row_label_as_published": "小号大件",
+        "label_note": "The official dangerous-goods table repeats 小号大件/中号大件/大号大件 for rows 5-7. Mapped to 小型超大件/中型超大件/大型超大件 by price level and by matching the non-hazardous table structure. This is our mapping, not the official label.",
+        "price_lt_10_usd": 15.58,
+        "price_10_50_usd": 16.36,
+        "price_gt_50_usd": 16.36,
+        "overage": {
+          "per_usd": 0.28,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_medium",
+        "size_tier_zh": "中型超大件",
+        "official_row_label_as_published": "中号大件",
+        "label_note": "The official dangerous-goods table repeats 小号大件/中号大件/大号大件 for rows 5-7. Mapped to 小型超大件/中型超大件/大型超大件 by price level and by matching the non-hazardous table structure. This is our mapping, not the official label.",
+        "price_lt_10_usd": 30.62,
+        "price_10_50_usd": 31.4,
+        "price_gt_50_usd": 31.4,
+        "overage": {
+          "per_usd": 0.56,
+          "start_lb": 51,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_large",
+        "size_tier_zh": "大型超大件",
+        "official_row_label_as_published": "大号大件",
+        "label_note": "The official dangerous-goods table repeats 小号大件/中号大件/大号大件 for rows 5-7. Mapped to 小型超大件/中型超大件/大型超大件 by price level and by matching the non-hazardous table structure. This is our mapping, not the official label.",
+        "price_lt_10_usd": 45.21,
+        "price_10_50_usd": 45.99,
+        "price_gt_50_usd": 45.99,
+        "overage": {
+          "per_usd": 0.68,
+          "start_lb": 51,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_long",
+        "size_tier_zh": "长型超大件",
+        "official_row_label_as_published": "长型大件",
+        "price_lt_10_usd": 70.21,
+        "price_10_50_usd": 70.99,
+        "price_gt_50_usd": 70.99,
+        "overage": {
+          "per_usd": 0.3,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_light_special",
+        "size_tier_zh": "轻型特殊超大件",
+        "official_row_label_as_published": "轻型特殊大件",
+        "price_lt_10_usd": 78.33,
+        "price_10_50_usd": 79.11,
+        "price_gt_50_usd": 79.11,
+        "overage": {
+          "per_usd": 0.3,
+          "start_lb": 1,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      },
+      {
+        "tier_key": "xl_heavy_special",
+        "size_tier_zh": "重型特殊超大件",
+        "official_row_label_as_published": "重型特殊超大件1",
+        "price_lt_10_usd": 215.44,
+        "price_10_50_usd": 216.23,
+        "price_gt_50_usd": 216.23,
+        "overage": {
+          "per_usd": 0.19,
+          "start_lb": 151,
+          "unit": "磅",
+          "unit_oz": 16,
+          "rounding": "ceil to whole pound"
+        }
+      }
+    ],
+    "dangerous_goods_note": {
+      "official_text_zh": "对于需要进行特殊处理和储存的危险品，亚马逊物流会收取单独的配送费用。",
+      "why_it_matters": "Dangerous goods (batteries, aerosols, flammables, magnets, etc.) are NOT charged the standard bulky/oversized rate. The surcharge is material: 小号大件 8.24 vs 7.51 (+0.73) and 重型特殊超大件 216.23 vs 191.28 (+24.95). Any calc that ignores the DG table under-quotes DG sellers, most on the heavy tiers.",
+      "coverage_gap": "2026 non-peak and 2026 peak DG tables are now captured (see fulfillment_fees_bulky_oversized_dangerous_goods_2026).",
+      "hazmat_classification": "Amazon decides DG status per ASIN; this dataset does not classify products."
+    },
+    "oversized_handling_fees_2027": {
+      "effective": "2027-01-15",
+      "official_intro_zh": "自 2027 年 1 月 15 日起，具有特定包装属性的超大件商品将根据其尺寸，在亚马逊物流配送费用之外收取扁平商品处理费、超限悬挂处理费或这两项费用。",
+      "charge_triggers": [
+        {
+          "fee": "扁平商品处理费 (flat-item handling fee)",
+          "condition": "最短边 < 4 英寸 且 次长边 >= 25 英寸",
+          "condition_en": "shortest side < 4 in AND second-longest side >= 25 in"
+        },
+        {
+          "fee": "超限悬挂处理费 (protruding-item handling fee)",
+          "condition": "次长边 > 43 英寸",
+          "condition_en": "second-longest side > 43 in"
+        },
+        {
+          "fee": "两项同时收",
+          "condition": "同时满足以上两个条件"
+        }
+      ],
+      "applies_to": [
+        "非服装类商品",
+        "服装类商品",
+        "危险品"
+      ],
+      "flat_item_handling_usd": {
+        "xl_small": 8.4,
+        "xl_medium": 8.65,
+        "xl_large": 9.42,
+        "xl_long": 10.48,
+        "xl_light_special": 21.67,
+        "xl_heavy_special": 29.53
+      },
+      "protruding_item_handling_usd": {
+        "xl_long": 3.45,
+        "xl_light_special": 5.23,
+        "xl_heavy_special": 10.45
+      },
+      "note_no_charge_tiers": "小型/中型/大型超大件只可能收扁平费，不收超限悬挂费（官方只给长型、轻型特殊、重型特殊三档悬挂费）。",
+      "billable_weight_note": "重型特殊超大件按商品重量，其余按商品重量与体积重量二者中的较大值。",
+      "verified_against_worked_examples": [
+        {
+          "item": "墙板 60x30x3, 单件25lb",
+          "tier": "小型超大件",
+          "calc": "14.22+ceil(38.85-1)*0.28=24.86 + 扁平8.40",
+          "total": 33.26,
+          "official": 33.26,
+          "match": true
+        },
+        {
+          "item": "桌面面板 70x44x3, 单件50lb",
+          "tier": "长型超大件",
+          "calc": "63.75+ceil(66.47-1)*0.30=83.55 + 扁平10.48 + 悬挂3.45",
+          "total": 97.48,
+          "official": 97.48,
+          "match": true
+        },
+        {
+          "item": "公告栏 97x14.5x2, 单件20lb",
+          "tier": "长型超大件",
+          "calc": "63.75+ceil(20.24-1)*0.30=69.75 (无条件不收费)",
+          "total": 69.75,
+          "official": 69.75,
+          "match": true
+        }
+      ]
+    },
+    "oversized_handling_fees_2026": {
+      "effective_until": "2027-01-14",
+      "official_rule_zh": "最长边超过 96 英寸或者长度加围长超过 130 英寸的超大件（不超过 150 磅）商品将被视为特大号商品。",
+      "extra_large_handling_usd": {
+        "oversized_0_50lb": 17,
+        "oversized_50_70lb": 21,
+        "oversized_70_150lb": 25
+      },
+      "retired": "自 2027-01-15 起取消特大号处理费，改按新的大件尺寸分段与扁平/悬挂处理费收取。"
+    },
+    "fulfillment_fees_bulky_oversized_dangerous_goods_2026": {
+      "non_peak": {
+        "window": "2026-01-15 .. 2026-10-14",
+        "tiers": [
+          {
+            "tier_key": "big_small",
+            "size_tier_zh": "小号大件",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 7.5,
+            "price_10_50_usd": 8.27,
+            "price_gt_50_usd": 8.27,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "big_large",
+            "size_tier_zh": "大号大件",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 9.3,
+            "price_10_50_usd": 10.07,
+            "price_gt_50_usd": 10.07,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_0_50",
+            "size_tier_zh": "超大件：0 至 50 磅",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 27.67,
+            "price_10_50_usd": 28.44,
+            "price_gt_50_usd": 28.44,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_50_70",
+            "size_tier_zh": "超大件：50 到 70 磅",
+            "weight_band_zh": "50 至 70 磅（不含 50 磅）",
+            "price_lt_10_usd": 39.76,
+            "price_10_50_usd": 40.53,
+            "price_gt_50_usd": 40.53,
+            "overage": {
+              "per_usd": 0.75,
+              "start_lb": 51,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_70_150",
+            "size_tier_zh": "超大件：70 至 150 磅",
+            "weight_band_zh": "70 至 150 磅（不含 70 磅）",
+            "price_lt_10_usd": 57.68,
+            "price_10_50_usd": 58.45,
+            "price_gt_50_usd": 58.45,
+            "overage": {
+              "per_usd": 0.75,
+              "start_lb": 71,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_150_plus",
+            "size_tier_zh": "超大件：超过 150 磅",
+            "weight_band_zh": "150 磅以上",
+            "price_lt_10_usd": 218.76,
+            "price_10_50_usd": 219.53,
+            "price_gt_50_usd": 219.53,
+            "overage": {
+              "per_usd": 0.19,
+              "start_lb": 151,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          }
+        ]
+      },
+      "peak": {
+        "window": "2026-10-15 .. 2027-01-14",
+        "tiers": [
+          {
+            "tier_key": "big_small",
+            "size_tier_zh": "小号大件",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 9.06,
+            "price_10_50_usd": 9.83,
+            "price_gt_50_usd": 9.83,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "big_large",
+            "size_tier_zh": "大号大件",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 10.86,
+            "price_10_50_usd": 11.63,
+            "price_gt_50_usd": 11.63,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_0_50",
+            "size_tier_zh": "超大件：0 至 50 磅",
+            "weight_band_zh": "0 至 50 磅",
+            "price_lt_10_usd": 31.71,
+            "price_10_50_usd": 32.48,
+            "price_gt_50_usd": 32.48,
+            "overage": {
+              "per_usd": 0.38,
+              "start_lb": 1,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_50_70",
+            "size_tier_zh": "超大件：50 到 70 磅",
+            "weight_band_zh": "50 至 70 磅（不含 50 磅）",
+            "price_lt_10_usd": 43.86,
+            "price_10_50_usd": 44.63,
+            "price_gt_50_usd": 44.63,
+            "overage": {
+              "per_usd": 0.75,
+              "start_lb": 51,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_70_150",
+            "size_tier_zh": "超大件：70 至 150 磅",
+            "weight_band_zh": "70 至 150 磅（不含 70 磅）",
+            "price_lt_10_usd": 64.04,
+            "price_10_50_usd": 64.81,
+            "price_gt_50_usd": 64.81,
+            "overage": {
+              "per_usd": 0.75,
+              "start_lb": 71,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          },
+          {
+            "tier_key": "xl_150_plus",
+            "size_tier_zh": "超大件：超过 150 磅",
+            "weight_band_zh": "150 磅以上",
+            "price_lt_10_usd": 230.84,
+            "price_10_50_usd": 231.61,
+            "price_gt_50_usd": 231.61,
+            "overage": {
+              "per_usd": 0.19,
+              "start_lb": 151,
+              "unit": "磅",
+              "unit_oz": 16,
+              "rounding": "ceil to whole pound"
+            }
+          }
+        ]
+      },
+      "note": "2026 uses the OLD tier structure: 2 bulky (小号/大号大件) + 4 oversized. The 2027 card splits these into 4 bulky + 6 oversized, so tier_key here is NOT comparable to the 2027 keys — xl_0_50 / xl_50_70 / xl_70_150 / xl_150_plus are 2026-only identifiers.",
+      "billable_weight_note": "超大件 150 磅以上按商品重量；其余取商品重量与体积重量中的较大值。",
+      "extra_large_handling_note": "2026 危险品同样适用特大号处理费 $17/$21/$25（最长边>96 英寸或长+围长>130 英寸），适用至 2027-01-14。"
+    },
+    "size_tier_classification": {
+      "source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W (as supplied by the site owner 2026-11-12)",
+      "official_text_zh": "亚马逊将商品分为三种尺寸分段：标准尺寸：商品包裹需同时满足以下所有条件：长度（最长边）不超过18英寸、宽度（次长边）不超过14英寸、高度（最短边）不超过8英寸、重量不超过20磅。大件：商品包裹的重量和尺寸超过标准尺寸商品的任何标准，但未达到超大件商品的标准。超大件：商品包裹满足以下任一条件即视为超大件：长度（最长边）为96英寸或更大、长度加围长为130英寸或更大（围长计算方式为2×高+2×宽）、重量为50磅或更重、商品是电视机且长度（最长边）为40英寸或更大。",
+      "standard_max": {
+        "longest_in": 18,
+        "second_longest_in": 14,
+        "shortest_in": 8,
+        "weight_lb": 20,
+        "rule": "ALL four must hold simultaneously"
+      },
+      "oversized_triggers_any": [
+        {
+          "trigger": "longest side >= 96 in"
+        },
+        {
+          "trigger": "longest + girth >= 130 in",
+          "girth_formula": "2 × height + 2 × width"
+        },
+        {
+          "trigger": "weight >= 50 lb"
+        },
+        {
+          "trigger": "TV with longest side >= 40 in"
+        }
+      ],
+      "bulky": "exceeds at least one standard criterion but hits none of the oversized triggers",
+      "KNOWN_GAP": "This page defines only the THREE top-level classes (standard / bulky / oversized). It does NOT give the cut-offs that split bulky into the 2027 four tiers (小号/中号/大号/超大号大件) or oversized into the 2027 six tiers (小型/中型/大型/长型/轻型特殊/重型特殊超大件). Those cut-offs are NOT in this dataset and must not be guessed — the tier fees themselves ARE official.",
+      "delivery_speed_targets": {
+        "standard": {
+          "1_day_pct": 30,
+          "2_day_pct": 70
+        },
+        "bulky": {
+          "1_day_pct": 10,
+          "2_day_pct": 45
+        },
+        "oversized": {
+          "2_day_pct": 15
+        },
+        "note": "Delivery-speed attainment targets per class, from the same page. Separate from fees; recorded because it is part of the published tier definition."
+      },
+      "validation_against_official_examples": [
+        {
+          "item": "墙板 60×30×3, 25 lb",
+          "top_level_by_rule": "bulky (24.5+... <96, girth path 60+66=126 <130, 25 lb <50)",
+          "official_tier": "小型超大件 (oversized)",
+          "consistent": "NO — the 3-class rule puts it in bulky, yet Amazon prices it on an oversized tier. Proves the bulky->oversized sub-cut-offs come from a different rule set than this page."
+        },
+        {
+          "item": "显示器 54×34×3.5, 41 lb",
+          "top_level_by_rule": "bulky (54+75=129 <130, 41 lb <50)",
+          "official_tier": "小型超大件 (oversized)",
+          "consistent": "NO — same pattern."
+        },
+        {
+          "item": "电视机 65×20×7, 62 lb",
+          "top_level_by_rule": "oversized (weight 62 lb >= 50)",
+          "official_tier": "中型超大件",
+          "consistent": "YES"
+        },
+        {
+          "item": "婴儿床 24×7.5×6, 7.9 lb",
+          "top_level_by_rule": "bulky",
+          "official_tier": "小号大件",
+          "consistent": "YES"
+        }
+      ],
+      "SUPERSeded_BY": "rates.size_tier_definitions_2027 — the detailed 2027 table reproduces all 9 official examples; this 3-class summary does not and must not be used for tier assignment."
+    },
+    "size_tier_definitions_2027": {
+      "source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W (page supplied by site owner 2026-11-12)",
+      "effective": "2027-01-15",
+      "valid_until": "2027-01-14 for the 2026 table below",
+      "girth_formula": "2 × (次长边 + 最短边)  [second-longest + shortest]",
+      "billable_weight": "发货重量 = max(商品重量, 体积重量)，体积重量 = 长×宽×高 ÷ 139。小号标准尺寸与重型特殊超大件按商品重量。",
+      "how_to_use": "自上而下逐档检查；第一个所有列都满足的档即为该商品的尺寸分段。",
+      "tiers_2027": [
+        {
+          "tier_key": "ss",
+          "name_zh": "小号标准尺寸",
+          "max_billable_lb": 1.0,
+          "max_longest_in": 15,
+          "max_second_in": 12,
+          "max_shortest_in": 0.75,
+          "max_long_plus_girth_in": null
+        },
+        {
+          "tier_key": "ls",
+          "name_zh": "大号标准尺寸",
+          "max_billable_lb": 20,
+          "max_longest_in": 18,
+          "max_second_in": 14,
+          "max_shortest_in": 8,
+          "max_long_plus_girth_in": null
+        },
+        {
+          "tier_key": "big_small",
+          "name_zh": "小号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 28,
+          "max_second_in": 24,
+          "max_shortest_in": 20,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "big_medium",
+          "name_zh": "中号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 37,
+          "max_second_in": 28,
+          "max_shortest_in": 20,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "big_large",
+          "name_zh": "大号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 52,
+          "max_second_in": 28,
+          "max_shortest_in": 28,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "big_xlarge",
+          "name_zh": "超大号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 59,
+          "max_second_in": 33,
+          "max_shortest_in": 33,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl_small",
+          "name_zh": "小型超大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 72,
+          "max_second_in": null,
+          "max_shortest_in": null,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl_medium",
+          "name_zh": "中型超大件",
+          "max_billable_lb": 70,
+          "max_longest_in": 78,
+          "max_second_in": null,
+          "max_shortest_in": null,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl_large",
+          "name_zh": "大型超大件",
+          "max_billable_lb": 150,
+          "max_longest_in": 96,
+          "max_second_in": null,
+          "max_shortest_in": null,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl_long",
+          "name_zh": "长型超大件",
+          "max_billable_lb": 150,
+          "max_longest_in": 108,
+          "max_second_in": null,
+          "max_shortest_in": null,
+          "max_long_plus_girth_in": 165
+        },
+        {
+          "tier_key": "xl_light_special",
+          "name_zh": "轻型特殊超大件",
+          "max_billable_lb": 150,
+          "min_longest_in": 108,
+          "min_long_plus_girth_in": 165,
+          "max_second_in": null,
+          "max_shortest_in": null,
+          "max_long_plus_girth_in": null
+        },
+        {
+          "tier_key": "xl_heavy_special",
+          "name_zh": "重型特殊超大件",
+          "min_billable_lb_exclusive": 150,
+          "note": "超过 150 磅即为此档，其他条件不设限"
+        }
+      ],
+      "tiers_2026": [
+        {
+          "tier_key": "ss",
+          "name_zh": "小号标准尺寸",
+          "max_billable_lb": 1.0,
+          "max_longest_in": 15,
+          "max_second_in": 12,
+          "max_shortest_in": 0.75
+        },
+        {
+          "tier_key": "ls",
+          "name_zh": "大号标准尺寸",
+          "max_billable_lb": 20,
+          "max_longest_in": 18,
+          "max_second_in": 14,
+          "max_shortest_in": 8
+        },
+        {
+          "tier_key": "big_small",
+          "name_zh": "小号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 37,
+          "max_second_in": 28,
+          "max_shortest_in": 20,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "big_large",
+          "name_zh": "大号大件",
+          "max_billable_lb": 50,
+          "max_longest_in": 59,
+          "max_second_in": 33,
+          "max_shortest_in": 33,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl_0_50",
+          "name_zh": "超大件：0 至 50 磅",
+          "max_billable_lb": 50,
+          "note": "最长边>59 或 次长边>33 或 最短边>33 或 长+围长>130 或 发货重量>50"
+        },
+        {
+          "tier_key": "xl_50_70",
+          "name_zh": "超大件：50 至 70 磅",
+          "min_billable_lb_exclusive": 50,
+          "max_billable_lb": 70
+        },
+        {
+          "tier_key": "xl_70_150",
+          "name_zh": "超大件：70 至 150 磅",
+          "min_billable_lb_exclusive": 70,
+          "max_billable_lb": 150
+        },
+        {
+          "tier_key": "xl_150_plus",
+          "name_zh": "超大件：150 磅以上",
+          "min_billable_lb_exclusive": 150
+        }
+      ],
+      "validated_against_official_examples": [
+        {
+          "item": "移动设备外壳 13.8×9×0.7, 2.88 oz",
+          "tier": "小号标准尺寸",
+          "match": true
+        },
+        {
+          "item": "T恤 8.5×4.8×1, 6.08 oz",
+          "tier": "大号标准尺寸",
+          "match": true
+        },
+        {
+          "item": "熨斗 12.6×6.6×5.5, 3.35 lb / 体积重 3.29 lb",
+          "tier": "大号标准尺寸",
+          "match": true
+        },
+        {
+          "item": "婴儿床 24×7.5×6, 7.90 lb / 体积重 7.77 lb",
+          "tier": "小号大件",
+          "match": true
+        },
+        {
+          "item": "墙板 60×30×3, 25 lb / 体积重 38.85 lb",
+          "tier": "小型超大件",
+          "match": true
+        },
+        {
+          "item": "显示器 54×34×3.5, 41 lb / 体积重 46.23 lb",
+          "tier": "小型超大件",
+          "match": true
+        },
+        {
+          "item": "电视机 65×20×7, 62 lb / 体积重 65.47 lb",
+          "tier": "中型超大件",
+          "match": true
+        },
+        {
+          "item": "桌面面板 70×44×3, 50 lb / 体积重 66.47 lb",
+          "tier": "长型超大件",
+          "match": true
+        },
+        {
+          "item": "公告栏 97×14.5×2, 20 lb / 体积重 20.24 lb",
+          "tier": "长型超大件",
+          "match": true
+        }
+      ],
+      "validation_result": "9/9 official worked examples reproduced. This table REPLACES the earlier 3-class rule as the operative classifier — the 3-class rule put 墙板 and 显示器 on bulky, contradicting Amazon. See rates.size_tier_classification for the superseded summary.",
+      "end_to_end_check": {
+        "method": "Read the published JSON, classify by tiers_2027, price with fulfillment_fees_bulky_oversized + oversized_handling_fees_2027, compare to the official worked examples.",
+        "result": "6/6 tier classifications correct. 5/6 totals match exactly. The sixth (显示器) differs only because the official FULFILLMENT page lists fulfillment fee alone ($27.10) and omits the $8.40 flat-item handling fee that its own dimension rule triggers (shortest 3.5in <4 AND second-longest 34in >=25) — the official HANDLING page prices the analogous thin board as $24.86+$8.40=$33.26. Our figure of $35.50 is the complete charge, not an error.",
+        "same_rule_applied_to_all_six": true
+      },
+      "known_calculator_gap": {
+        "issue": "js/fba-rates-2026.js stores only 3 Small-Standard rungs (2/4/6 oz). The official Small-Standard card has 8 rungs (2/4/6/8/10/12/14/16 oz).",
+        "effect": "A genuine Small-Standard item weighing 8-16 oz currently gets quoted from the LARGE-standard ladder and is OVER-quoted: 8oz +$0.41, 10oz +$0.52, 12oz +$0.42, 14oz +$0.69, 16oz +$0.64 (2026 non-peak, $10-50 band). Average $0.54/unit.",
+        "why_not_yet_fixed": "Small-vs-Large standard is decided by DIMENSIONS (longest<=15in, second<=12in, shortest<=0.75in), not weight. To use the 8 Small-Standard rungs correctly the calculator must classify by dimension first — which classifySize2027 now does. Wiring the 16 oz Small-Standard ladder is the next step; it is stored as SMALL_STANDARD_RUNGS_2027 (reference data) but not yet attached.",
+        "reference_array": "SMALL_STANDARD_RUNGS_2027 in js/fba-rates-2026.js already holds all 8 rungs with official 2027 values."
+      },
+      "calculator_behavior_note": {
+        "resolved_2026_11_12": "大件分支已按发货日期选表。2027-01-15 之前用 2026 六档（BIG_FEES_2026_NONPEAK/PEAK + DG 两张），之后用 2027 十档。不再出现「2026 日期套 2027 价」的情况。",
+        "card_switch_function": "bigFeeForDate(tierKey2027, billableLb, band, shipDate, isDangerous) — 内部按 cardYearFor() 路由，2026 路径还会按 isPeakShipDate() 选旺季表。",
+        "tier_mapping_rule": "2027 十档 -> 2026 六档 不得按名称映射。2027 超大件按最长边拆分、2026 只按重量拆分，故超大件一律用 tier2026ByWeight(billableLb) 重新定档；仅 小号/中号大件->小号大件、大号/超大号大件->大号大件 可直接映射。",
+        "handling_fees": "2027 走尺寸型（扁平 最短边<4 且 次长边>=25；悬挂 次长边>43）。2026 走特大号处理费（最长边>96 或 长+围长>130，且<=150磅，$17/$21/$25）。",
+        "verification_2026_11_12": "线上实测 2026 八项全过（婴儿床/显示器/电视机/公告栏 × 旺/非旺），2027 六项全过，危险品两条与公式一致。"
+      }
+    },
+    "peak_fulfillment_2026": {
+      "window": "2026-10-15 .. 2027-01-14",
+      "basis": "ship date",
+      "official_avg_per_unit_usd": 0.32,
+      "per_rung_uplift_usd": {
+        "ss_2": 0.19,
+        "ss_4": 0.19,
+        "ss_6": 0.2,
+        "ss_8": 0.2,
+        "ss_10": 0.21,
+        "ss_12": 0.21,
+        "ss_14": 0.22,
+        "ss_16": 0.22,
+        "ls1_4": 0.24,
+        "ls1_8": 0.26,
+        "ls1_12": 0.28,
+        "ls1_16": 0.29,
+        "ls2_20": 0.3,
+        "ls2_24": 0.31,
+        "ls2_28": 0.32,
+        "ls2_32": 0.33,
+        "ls3_36": 0.37,
+        "ls3_40": 0.39,
+        "ls3_44": 0.4,
+        "ls3_48": 0.41,
+        "ls4": 0.54
+      },
+      "important": "The uplift is the SAME across all three price bands (<$10 / $10-$50 / >$50) — verified row by row on the official table. Only the base fee varies by band.",
+      "avoid": "Do NOT apply PEAK_FULFILLMENT.byTier as a flat per-tier uplift. byTier is a per-TIER top-of-range figure (e.g. ss=0.20) but the real uplift steps from 0.19 (<=2oz) to 0.22 (14-16oz) inside ss alone. On ls1 the gap is 0.24 vs 0.29 = up to $0.05/unit.",
+      "rate_bands_2026_peak_captured": true
+    }
+  }
+}

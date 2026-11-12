@@ -15,7 +15,7 @@
       "aged_inventory_tiers": "2026-01-16",
       "low_inventory_level_fee": "2026-01-15"
     },
-    "last_verified": "2026-10-27",
+    "last_verified": "2026-11-08",
     "publisher": {
       "name": "ylishi.tools",
       "url": "https://ylishi.tools/annual-fba-report/"
@@ -43,11 +43,11 @@
     "coverage": {
       "marketplace": "amazon.com (US)",
       "currency": "USD",
-      "categories": 24,
+      "categories": 25,
       "size_tiers": 11
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
-    "source_sha256_16": "a6781d68c35d27e5"
+    "source_sha256_16": "a27d27c0d695ede4"
   },
   "rates": {
     "fuel_surcharge_on_fulfillment": 0.035,
@@ -275,6 +275,24 @@
         "min_fee_usd": 0.3,
         "tiered": false,
         "high_rate": null
+      },
+      {
+        "category": "3D Printers (12% first $200 / 5% above)",
+        "category_zh": "3D 打印机（前 $200 收 12% / 超出部分 5%）",
+        "rate": 0.12,
+        "min_fee_usd": 0.3,
+        "tiered": true,
+        "high_rate": 0.05,
+        "portion_bands": [
+          {
+            "upTo": 200,
+            "rate": 0.12
+          },
+          {
+            "upTo": null,
+            "rate": 0.05
+          }
+        ]
       },
       {
         "category": "Jewelry (20% ≤$250 / 5% >$250, portion)",
