@@ -2,7 +2,7 @@
   "dataset": {
     "id": "ylishi-fba-eu-2026",
     "name": "Amazon EU FBA Fee Rates 2026 (Pan-EU & EFN)",
-    "description": "Amazon European marketplace FBA fee schedule for 2026: full official fulfilment fee tables by store and size class (13 classes: envelopes, parcels and bulky tiers, weight rows as published), referral rates by category, Pan-EU storage countries, EFN cross-border surcharges, per-kg overage rates, the verified monthly storage table (UK in £ per cubic foot, EU in € and SE in SEK per cubic metre), the 1.5% fuel & logistics surcharge (rising to 2% from 2026-11-02, official), and the 2026 EU cross-border import charges — a €3.00 per item statutory customs duty (Regulation (EU) 2026/382, effective 2026-07-01) plus the Union handling fee of €2.00 per item (delegated regulation C(2026) 6694 adopted 2026-09-21, effective 2026-11-01, applying to distance sales above EUR 150 as well as below). Both are declared and paid by the declarant — in practice the platform or the non-EU seller — and Amazon passes them on in the customer-facing price at checkout, so they are not deducted from seller net profit. Fulfilment tables transcribed programmatically from Amazon's official xlsx rate tables (Seller Central exports, originals archived 2026-10-23); storage checked against the official monthly storage card; import charges checked against EUR-Lex and European Commission primary sources.",
+    "description": "Amazon European marketplace FBA fee schedule for 2026: full official fulfilment fee tables by store and size class (13 classes: envelopes, parcels and bulky tiers, weight rows as published), referral rates by category, Pan-EU storage countries, EFN cross-border surcharges, per-kg overage rates, the verified monthly storage table (UK in £ per cubic foot, EU in € and SE in SEK per cubic metre), the 2% fuel & logistics surcharge (1.5% from 2026-04-17 until it was raised to 2% on 2026-11-02, official), and the 2026 EU cross-border import charges — a €3.00 per item statutory customs duty (Regulation (EU) 2026/382, effective 2026-07-01) plus the Union handling fee of €2.00 per item (delegated regulation C(2026) 6694 adopted 2026-09-21, effective 2026-11-01, applying to distance sales above EUR 150 as well as below). Both are declared and paid by the declarant — in practice the platform or the non-EU seller — and Amazon passes them on in the customer-facing price at checkout, so they are not deducted from seller net profit. Fulfilment tables transcribed programmatically from Amazon's official xlsx rate tables (Seller Central exports, originals archived 2026-10-23); storage checked against the official monthly storage card; import charges checked against EUR-Lex and European Commission primary sources.",
     "version": "2026.10.0",
     "effective_dates": {
       "rate_card": "2025-12-15",
@@ -13,7 +13,7 @@
       "import_duty": "2026-07-01",
       "customs_handling": "2026-11-01"
     },
-    "last_verified": "2026-11-02",
+    "last_verified": "2026-11-13",
     "publisher": {
       "name": "ylishi.tools",
       "url": "https://ylishi.tools/annual-fba-report/"
@@ -28,7 +28,7 @@
         "url": "https://sellercentral.amazon.co.uk/help/hub/reference/external/G200612770"
       },
       {
-        "name": "Amazon UK pricing page — FBA storage fees and the 1.5% fuel & logistics surcharge (effective 2026-04-17; verified 2026-09-15)",
+        "name": "Amazon UK pricing page — FBA storage fees and the fuel & logistics surcharge (1.5% effective 2026-04-17; raised to 2% on 2026-11-02 per Seller Central G200209150; pricing page verified 2026-09-15)",
         "url": "https://sell.amazon.co.uk/pricing"
       }
     ],
@@ -4518,7 +4518,7 @@
     },
     "storage_assumption_per_cuft_eur": 26.0,
     "returns_allowance": "1% of price",
-    "fuel_surcharge_on_fulfillment": 0.015,
+    "fuel_surcharge_on_fulfillment": 0.02,
     "fuel_surcharge_scheduled": {
       "rate": 0.02,
       "effective": "2026-11-02",
@@ -4538,7 +4538,7 @@
       "official_checked": "2026-10-23",
       "note": "Official: from 2 November 2026 the fuel and logistics-related surcharge increases from 1.5% to 2% on FBA fulfilment fees in these stores. Peak fees 15 Oct 2026 - 14 Jan 2027 (DE/UK selected orders) also carry the surcharge."
     },
-    "fuel_surcharge_note": "CONFIRMED against official Seller Central (checked 2026-10-23; supersedes the earlier media-only PENDING note). 1.5% applied to fulfilment fees in the UK, France, Germany, Italy, Spain, Poland, Sweden, Netherlands, Ireland and Belgium stores from 17 April 2026. This is NOT the US rate — the US applies 3.5%. Do not reuse one market's surcharge for the other.",
+    "fuel_surcharge_note": "CONFIRMED against official Seller Central (checked 2026-10-23; supersedes the earlier media-only PENDING note). 2% applies to fulfilment fees in the UK, France, Germany, Italy, Spain, Poland, Sweden, Netherlands, Ireland and Belgium stores from 2 November 2026; the rate was 1.5% from 17 April 2026 until that date. This is NOT the US rate — the US applies 3.5%. Do not reuse one market's surcharge for the other.",
     "eu_import_charges": {
       "applies_to_cross_border_only": true,
       "scope": "shipments sent from outside the EU to consumers in the EU. Orders fulfilled from stock already inside the EU, and inbound replenishments into an Amazon EU fulfilment centre, are not subject to these charges.",
