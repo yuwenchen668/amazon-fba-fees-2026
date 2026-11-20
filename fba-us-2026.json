@@ -4,7 +4,7 @@
     "id": "ylishi-fba-us-2026",
     "name": "Amazon US FBA Fee Rates 2026",
     "description": "Complete Amazon US Fulfillment by Amazon (FBA) fee schedule for 2026: referral fee rates by category, FBA fulfillment fees by size tier, monthly storage rates, aged inventory surcharges, inbound placement fees, low-inventory-level fee, return processing fees, the fuel & logistics surcharge, the 2026-10-15 peak-fulfilment uplift table, and the 2026 return policy.",
-    "version": "2026.09.4",
+    "version": "2026.11.20",
     "effective_dates": {
       "rate_card": "2026-01-15",
       "fuel_surcharge": "2026-04-17",
@@ -15,7 +15,7 @@
       "aged_inventory_tiers": "2026-01-16",
       "low_inventory_level_fee": "2026-01-15"
     },
-    "last_verified": "2026-11-08",
+    "last_verified": "2026-11-17",
     "publisher": {
       "name": "ylishi.tools",
       "url": "https://ylishi.tools/annual-fba-report/"
@@ -32,6 +32,14 @@
       {
         "name": "Amazon Seller Central US Low-inventory-level fee rate table (verified 2026-09-15)",
         "url": "https://sellercentral.amazon.com/help/hub/reference/external/GV43F6S76Y9DHYRH"
+      },
+      {
+        "name": "Amazon Seller Central - product size tiers incl. 2027 definitions (verified 2026-11-17)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W"
+      },
+      {
+        "name": "Amazon Seller Central - FBA inbound placement service fee, published ranges (verified 2026-11-17)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/inbound-placement-fee"
       }
     ],
     "license": {
@@ -44,10 +52,17 @@
       "marketplace": "amazon.com (US)",
       "currency": "USD",
       "categories": 25,
-      "size_tiers": 11
+      "size_tiers": 11,
+      "dangerous_goods_standard_tiers": 5
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
-    "source_sha256_16": "a27d27c0d695ede4"
+    "source_sha256_16": "c4da36eb2774db8b",
+    "verified_by": "Machine-generated from js/fba-rates-2026.js by rates/gen_rates_dataset.py (JS -> JSON, one-way). Rate values carried over unchanged; the generator only reshapes fields. Individual source rows traced to the Seller Central rate cards listed in dataset.sources. Verification status per figure is NOT uniformly row-by-row re-read — see dataset.verification_scope.",
+    "verification_scope": {
+      "numeric_verification": "inherited from the JS rate table; not independently re-read row by row for this JSON export",
+      "fields_verified": "structure, coverage counts, source URLs, license, citation string"
+    },
+    "next_review_due": "2027-02-15"
   },
   "rates": {
     "fuel_surcharge_on_fulfillment": 0.035,
@@ -292,7 +307,9 @@
             "upTo": null,
             "rate": 0.05
           }
-        ]
+        ],
+        "min_verified": false,
+        "min_note": "INHERITED, NOT SOURCED. The 2027 fee announcement does not state a minimum referral fee for 3D printers; $0.30 is the official minimum of the 20 categories re-sourced on 2026-09-24e. Exposure is theoretical (a $0.30 floor cannot bind above ~$3 of price) but this is an inference, not a fact."
       },
       {
         "category": "Jewelry (20% ≤$250 / 5% >$250, portion)",
@@ -460,6 +477,432 @@
         "estimated": false
       }
     ],
+    "fulfillment_fees_dangerous_goods_standard": {
+      "_note": "Dangerous-goods fulfillment card for STANDARD size tiers. Same page as fulfillment_fees (Seller Central GABBX6GZPA8MSZGW) but a separate table captioned 'FBA Non-Peak Fulfillment Fees (for dangerous goods)'. MUST be read from the en-US locale: the zh-CN locale of that page omits both standard-size DG tables entirely (21 tables vs 19), which is why DG used to be modelled as bulky/oversized only. Figures EXCLUDE the 3.5% fuel & logistics surcharge.",
+      "effective_dates": {
+        "non_peak": "2026-01-15",
+        "peak": "2026-10-15",
+        "card_2027": "2027-01-15"
+      },
+      "weight_step_rule_3_to_20_lb": "$0.08 per 4 oz interval above the first 3 lb, rounded up to the next 4 oz",
+      "non_peak_2026": {
+        "ss": [
+          {
+            "max_weight_oz": 2,
+            "under_10_usd": 3.4,
+            "usd_10_to_50": 4.29,
+            "over_50_usd": 4.55
+          },
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 3.43,
+            "usd_10_to_50": 4.36,
+            "over_50_usd": 4.62
+          },
+          {
+            "max_weight_oz": 6,
+            "under_10_usd": 3.48,
+            "usd_10_to_50": 4.37,
+            "over_50_usd": 4.63
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 3.55,
+            "usd_10_to_50": 4.43,
+            "over_50_usd": 4.69
+          },
+          {
+            "max_weight_oz": 10,
+            "under_10_usd": 3.64,
+            "usd_10_to_50": 4.55,
+            "over_50_usd": 4.81
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 3.65,
+            "usd_10_to_50": 4.61,
+            "over_50_usd": 4.87
+          },
+          {
+            "max_weight_oz": 14,
+            "under_10_usd": 3.73,
+            "usd_10_to_50": 4.72,
+            "over_50_usd": 4.98
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 3.77,
+            "usd_10_to_50": 4.78,
+            "over_50_usd": 5.04
+          }
+        ],
+        "ls1": [
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 3.73,
+            "usd_10_to_50": 4.55,
+            "over_50_usd": 4.81
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 3.94,
+            "usd_10_to_50": 4.76,
+            "over_50_usd": 5.02
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 4.17,
+            "usd_10_to_50": 4.99,
+            "over_50_usd": 5.25
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 4.37,
+            "usd_10_to_50": 5.19,
+            "over_50_usd": 5.45
+          }
+        ],
+        "ls2": [
+          {
+            "max_weight_oz": 20,
+            "under_10_usd": 4.82,
+            "usd_10_to_50": 5.64,
+            "over_50_usd": 5.9
+          },
+          {
+            "max_weight_oz": 24,
+            "under_10_usd": 5.2,
+            "usd_10_to_50": 6.02,
+            "over_50_usd": 6.28
+          },
+          {
+            "max_weight_oz": 28,
+            "under_10_usd": 5.35,
+            "usd_10_to_50": 6.17,
+            "over_50_usd": 6.43
+          },
+          {
+            "max_weight_oz": 32,
+            "under_10_usd": 5.49,
+            "usd_10_to_50": 6.31,
+            "over_50_usd": 6.57
+          }
+        ],
+        "ls3": [
+          {
+            "max_weight_oz": 36,
+            "under_10_usd": 5.56,
+            "usd_10_to_50": 6.38,
+            "over_50_usd": 6.64
+          },
+          {
+            "max_weight_oz": 40,
+            "under_10_usd": 5.74,
+            "usd_10_to_50": 6.56,
+            "over_50_usd": 6.82
+          },
+          {
+            "max_weight_oz": 44,
+            "under_10_usd": 5.9,
+            "usd_10_to_50": 6.72,
+            "over_50_usd": 6.98
+          },
+          {
+            "max_weight_oz": 48,
+            "under_10_usd": 6.31,
+            "usd_10_to_50": 7.13,
+            "over_50_usd": 7.39
+          }
+        ],
+        "ls4": [
+          {
+            "max_weight_oz": 320,
+            "under_10_usd": 6.61,
+            "usd_10_to_50": 7.43,
+            "over_50_usd": 7.69,
+            "per_4oz_over_3lb_usd": 0.08
+          }
+        ]
+      },
+      "peak_2026": {
+        "ss": [
+          {
+            "max_weight_oz": 2,
+            "under_10_usd": 3.74,
+            "usd_10_to_50": 4.63,
+            "over_50_usd": 4.89
+          },
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 3.8,
+            "usd_10_to_50": 4.73,
+            "over_50_usd": 4.99
+          },
+          {
+            "max_weight_oz": 6,
+            "under_10_usd": 3.88,
+            "usd_10_to_50": 4.77,
+            "over_50_usd": 5.03
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 3.98,
+            "usd_10_to_50": 4.86,
+            "over_50_usd": 5.12
+          },
+          {
+            "max_weight_oz": 10,
+            "under_10_usd": 4.1,
+            "usd_10_to_50": 5.01,
+            "over_50_usd": 5.27
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 4.14,
+            "usd_10_to_50": 5.1,
+            "over_50_usd": 5.36
+          },
+          {
+            "max_weight_oz": 14,
+            "under_10_usd": 4.25,
+            "usd_10_to_50": 5.24,
+            "over_50_usd": 5.5
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 4.32,
+            "usd_10_to_50": 5.33,
+            "over_50_usd": 5.59
+          }
+        ],
+        "ls1": [
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 4.32,
+            "usd_10_to_50": 5.14,
+            "over_50_usd": 5.4
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 4.56,
+            "usd_10_to_50": 5.38,
+            "over_50_usd": 5.64
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 4.82,
+            "usd_10_to_50": 5.64,
+            "over_50_usd": 5.9
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 5.04,
+            "usd_10_to_50": 5.86,
+            "over_50_usd": 6.12
+          }
+        ],
+        "ls2": [
+          {
+            "max_weight_oz": 20,
+            "under_10_usd": 5.51,
+            "usd_10_to_50": 6.33,
+            "over_50_usd": 6.59
+          },
+          {
+            "max_weight_oz": 24,
+            "under_10_usd": 5.91,
+            "usd_10_to_50": 6.73,
+            "over_50_usd": 6.99
+          },
+          {
+            "max_weight_oz": 28,
+            "under_10_usd": 6.08,
+            "usd_10_to_50": 6.9,
+            "over_50_usd": 7.16
+          },
+          {
+            "max_weight_oz": 32,
+            "under_10_usd": 6.24,
+            "usd_10_to_50": 7.06,
+            "over_50_usd": 7.32
+          }
+        ],
+        "ls3": [
+          {
+            "max_weight_oz": 36,
+            "under_10_usd": 6.33,
+            "usd_10_to_50": 7.15,
+            "over_50_usd": 7.41
+          },
+          {
+            "max_weight_oz": 40,
+            "under_10_usd": 6.53,
+            "usd_10_to_50": 7.35,
+            "over_50_usd": 7.61
+          },
+          {
+            "max_weight_oz": 44,
+            "under_10_usd": 6.7,
+            "usd_10_to_50": 7.52,
+            "over_50_usd": 7.78
+          },
+          {
+            "max_weight_oz": 48,
+            "under_10_usd": 7.12,
+            "usd_10_to_50": 7.94,
+            "over_50_usd": 8.2
+          }
+        ],
+        "ls4": [
+          {
+            "max_weight_oz": 320,
+            "under_10_usd": 7.51,
+            "usd_10_to_50": 8.33,
+            "over_50_usd": 8.59,
+            "per_4oz_over_3lb_usd": 0.08
+          }
+        ]
+      },
+      "non_peak_2027": {
+        "ss": [
+          {
+            "max_weight_oz": 2,
+            "under_10_usd": 3.57,
+            "usd_10_to_50": 4.59,
+            "over_50_usd": 5.15
+          },
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 3.62,
+            "usd_10_to_50": 4.61,
+            "over_50_usd": 5.17
+          },
+          {
+            "max_weight_oz": 6,
+            "under_10_usd": 3.69,
+            "usd_10_to_50": 4.75,
+            "over_50_usd": 5.32
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 3.71,
+            "usd_10_to_50": 4.8,
+            "over_50_usd": 5.37
+          },
+          {
+            "max_weight_oz": 10,
+            "under_10_usd": 3.74,
+            "usd_10_to_50": 4.88,
+            "over_50_usd": 5.45
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 3.75,
+            "usd_10_to_50": 4.97,
+            "over_50_usd": 5.54
+          },
+          {
+            "max_weight_oz": 14,
+            "under_10_usd": 3.79,
+            "usd_10_to_50": 5.01,
+            "over_50_usd": 5.57
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 3.83,
+            "usd_10_to_50": 5.04,
+            "over_50_usd": 5.6
+          }
+        ],
+        "ls1": [
+          {
+            "max_weight_oz": 4,
+            "under_10_usd": 3.73,
+            "usd_10_to_50": 4.62,
+            "over_50_usd": 5.18
+          },
+          {
+            "max_weight_oz": 8,
+            "under_10_usd": 3.94,
+            "usd_10_to_50": 4.83,
+            "over_50_usd": 5.4
+          },
+          {
+            "max_weight_oz": 12,
+            "under_10_usd": 4.17,
+            "usd_10_to_50": 5.06,
+            "over_50_usd": 5.63
+          },
+          {
+            "max_weight_oz": 16,
+            "under_10_usd": 4.37,
+            "usd_10_to_50": 5.27,
+            "over_50_usd": 5.83
+          }
+        ],
+        "ls2": [
+          {
+            "max_weight_oz": 20,
+            "under_10_usd": 4.82,
+            "usd_10_to_50": 5.79,
+            "over_50_usd": 6.36
+          },
+          {
+            "max_weight_oz": 24,
+            "under_10_usd": 5.2,
+            "usd_10_to_50": 6.18,
+            "over_50_usd": 6.74
+          },
+          {
+            "max_weight_oz": 28,
+            "under_10_usd": 5.35,
+            "usd_10_to_50": 6.33,
+            "over_50_usd": 6.9
+          },
+          {
+            "max_weight_oz": 32,
+            "under_10_usd": 5.49,
+            "usd_10_to_50": 6.47,
+            "over_50_usd": 7.04
+          }
+        ],
+        "ls3": [
+          {
+            "max_weight_oz": 36,
+            "under_10_usd": 5.56,
+            "usd_10_to_50": 6.55,
+            "over_50_usd": 7.11
+          },
+          {
+            "max_weight_oz": 40,
+            "under_10_usd": 5.74,
+            "usd_10_to_50": 6.73,
+            "over_50_usd": 7.29
+          },
+          {
+            "max_weight_oz": 44,
+            "under_10_usd": 5.9,
+            "usd_10_to_50": 6.89,
+            "over_50_usd": 7.45
+          },
+          {
+            "max_weight_oz": 48,
+            "under_10_usd": 6.31,
+            "usd_10_to_50": 7.32,
+            "over_50_usd": 7.88
+          }
+        ],
+        "ls4": [
+          {
+            "max_weight_oz": 320,
+            "under_10_usd": 6.61,
+            "usd_10_to_50": 7.63,
+            "over_50_usd": 8.2,
+            "per_4oz_over_3lb_usd": 0.08
+          }
+        ]
+      }
+    },
     "monthly_storage_per_cuft": {
       "standard": {
         "jan_sep": 0.78,
@@ -531,26 +974,282 @@
     "aged_inventory_surcharge_note": "AIS is charged IN ADDITION to the monthly storage fee, not instead of it. Bands 181-270 exclude clothing, footwear, bags, jewelry and watches. On the 366-455 and 456+ bands Amazon charges the GREATER of the per-cu-ft rate and the per_unit_min_usd, so a per-cu-ft-only model understates long-stored small items.",
     "inbound_placement": [
       {
-        "option": "None",
+        "option": "Amazon-optimised split (no fee)",
         "standard_unit_usd": 0,
         "oversize_unit_usd": 0
       },
       {
-        "option": "Minimal placement ($0.15–$0.50)",
-        "standard_unit_usd": 0.15,
-        "oversize_unit_usd": 0.3
+        "option": "Single location ($0.14–$1.90 std)",
+        "standard_unit_usd": 0.14,
+        "oversize_unit_usd": 1.1
       },
       {
-        "option": "Partial placement ($0.35–$0.98)",
-        "standard_unit_usd": 0.35,
-        "oversize_unit_usd": 0.75
-      },
-      {
-        "option": "Small parcel ($0.10)",
-        "standard_unit_usd": 0.1,
-        "oversize_unit_usd": 0.1
+        "option": "Partial split — big items only ($0.55–$3.50)",
+        "standard_unit_usd": 0.14,
+        "oversize_unit_usd": 0.55
       }
     ],
+    "inbound_placement_current": {
+      "effective": "current (unchanged from 2027-01-15; standard-size Central region merged into East, placement regions 3 -> 2)",
+      "options": {
+        "single_location": "ship to one location; fee applies",
+        "partial_split": "big items only, 2-3 locations; lower fee than single",
+        "amazon_optimized_split": "no fee; requires >=5 identical cartons or pallets per SKU (same item mix and quantities)"
+      },
+      "excluded": "oversize items are NOT charged an inbound placement fee",
+      "charged": "45 days after receipt, based on received quantity",
+      "billable_weight_rule": "small standard uses item weight; large standard and above use the greater of item weight and dimensional weight",
+      "standard_size_single_location_usd": [
+        {
+          "size_tier": "Small standard",
+          "from_oz": 0,
+          "to_oz": 8,
+          "min": 0.14,
+          "max": 0.32
+        },
+        {
+          "size_tier": "Small standard",
+          "from_oz": 8,
+          "to_oz": 16,
+          "min": 0.16,
+          "max": 0.32
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 0,
+          "to_oz": 12,
+          "min": 0.2,
+          "max": 0.4
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 12,
+          "to_oz": 24,
+          "min": 0.24,
+          "max": 0.5
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 24,
+          "to_oz": 48,
+          "min": 0.34,
+          "max": 0.6
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 48,
+          "to_oz": 80,
+          "min": 0.38,
+          "max": 0.76
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 80,
+          "to_oz": 112,
+          "min": 0.4,
+          "max": 0.98
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 112,
+          "to_oz": 160,
+          "min": 0.42,
+          "max": 1.2
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 160,
+          "to_oz": 240,
+          "min": 0.44,
+          "max": 1.5
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 240,
+          "to_oz": 320,
+          "min": 0.55,
+          "max": 1.9
+        }
+      ],
+      "big_items_usd": [
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 0,
+          "to_lb": 5,
+          "single_min": 1.1,
+          "single_max": 1.6,
+          "partial_min": 0.55,
+          "partial_max": 1.1
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 5,
+          "to_lb": 12,
+          "single_min": 1.75,
+          "single_max": 2.4,
+          "partial_min": 0.65,
+          "partial_max": 1.75
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 12,
+          "to_lb": 28,
+          "single_min": 2.74,
+          "single_max": 3.5,
+          "partial_min": 0.81,
+          "partial_max": 2.19
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 28,
+          "to_lb": 42,
+          "single_min": 3.95,
+          "single_max": 4.95,
+          "partial_min": 1.05,
+          "partial_max": 2.83
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 42,
+          "to_lb": 50,
+          "single_min": 4.8,
+          "single_max": 5.95,
+          "partial_min": 1.23,
+          "partial_max": 3.32
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 0,
+          "to_lb": 5,
+          "single_min": 1.3,
+          "single_max": 1.8,
+          "partial_min": 0.55,
+          "partial_max": 1.25
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 5,
+          "to_lb": 12,
+          "single_min": 2.1,
+          "single_max": 2.9,
+          "partial_min": 0.65,
+          "partial_max": 1.8
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 12,
+          "to_lb": 28,
+          "single_min": 3.4,
+          "single_max": 4.1,
+          "partial_min": 0.81,
+          "partial_max": 2.3
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 28,
+          "to_lb": 42,
+          "single_min": 4.7,
+          "single_max": 5.6,
+          "partial_min": 1.05,
+          "partial_max": 2.95
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 42,
+          "to_lb": 50,
+          "single_min": 5.5,
+          "single_max": 6.5,
+          "partial_min": 1.23,
+          "partial_max": 3.5
+        }
+      ],
+      "official_worked_example": {
+        "case": "single location, Western US, 100 units large standard <=12oz",
+        "per_unit_usd": 0.36,
+        "total_usd": 36.0
+      },
+      "new_seller_credit": "USD 400 credit toward inbound placement fees for new sellers who create their first shipment within 90 days of launch",
+      "note_on_replaced_values": "The previous four flat options (Minimal placement / Partial placement / Small parcel / None) do NOT exist on the official page and are retired."
+    },
+    "size_tier_definitions_2026": {
+      "source": "https://sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+      "effective": "2026-01-15 through 2027-01-14",
+      "tiers": [
+        {
+          "tier_key": "standard_small",
+          "zh": "小号标准尺寸",
+          "max_weight_lb": 1.0,
+          "max_longest_in": 15,
+          "max_second_in": 12,
+          "max_shortest_in": 0.75,
+          "max_long_plus_girth_in": null
+        },
+        {
+          "tier_key": "standard_large",
+          "zh": "大号标准尺寸",
+          "max_weight_lb": 20.0,
+          "max_longest_in": 18,
+          "max_second_in": 14,
+          "max_shortest_in": 8.0,
+          "max_long_plus_girth_in": null
+        },
+        {
+          "tier_key": "big_small",
+          "zh": "小号大件",
+          "max_weight_lb": 50.0,
+          "max_longest_in": 37,
+          "max_second_in": 28,
+          "max_shortest_in": 20.0,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "big_large",
+          "zh": "大号大件",
+          "max_weight_lb": 50.0,
+          "max_longest_in": 59,
+          "max_second_in": 33,
+          "max_shortest_in": 33.0,
+          "max_long_plus_girth_in": 130
+        },
+        {
+          "tier_key": "xl1",
+          "zh": "超大件 0-50 磅",
+          "max_weight_lb": 50.0,
+          "note": "longest>59 or second>33 or shortest>33 or long+girth>130, or billable weight>50"
+        },
+        {
+          "tier_key": "xl2",
+          "zh": "超大件 50-70 磅",
+          "min_weight_lb_over": 50.0,
+          "max_weight_lb": 70.0
+        },
+        {
+          "tier_key": "xl3",
+          "zh": "超大件 70-150 磅",
+          "min_weight_lb_over": 70.0,
+          "max_weight_lb": 150.0
+        },
+        {
+          "tier_key": "xl4",
+          "zh": "超大件 150 磅以上",
+          "min_weight_lb_over": 150.0
+        }
+      ],
+      "extra_large_threshold": "longest side >96in or long+girth >130in (and <=150 lb) = 特大号 item"
+    },
+    "billable_weight_rule": {
+      "dim_weight_divisor": 139,
+      "dim_weight_formula": "L(in) x W(in) x H(in) / 139, result in lb",
+      "min_w_h_for_bulky_in": 2,
+      "billable": "max(item weight, dimensional weight)",
+      "exceptions_billed_on_item_weight_only": [
+        "Small Standard",
+        "Special Oversize Heavy"
+      ],
+      "overage_rounding": "ceil to whole pound",
+      "price_band_boundaries": "prices of exactly $10 or $50 are billed at the $10-$50 rate",
+      "peak_determination": "FBA fees are determined by the ship date, not the order date"
+    },
     "return_processing_fees": [
       {
         "size_tier": "Small Standard (<6 oz)",
@@ -588,6 +1287,366 @@
         "per_lb_over_usd": 0.05
       }
     ],
+    "return_processing_fees_note": "return_processing_fees (flat, 7 rows) is DEPRECATED: it was non-apparel only, used invented tier labels ('Small Standard (<6 oz)', 'Large Standard (6 oz-1 lb)') and carried $5.00 for all bulky tiers, a value that does not appear in the official table. Read return_processing_fees_full instead.",
+    "return_processing_fees_full": {
+      "source_ref": "2027 return-processing fee page (site owner supplied 2026-11-17)",
+      "change_note": "Only the size tiers change - the rate numbers are the same on both sides of the change. The old 7 flat rows were both too coarse AND missing the entire apparel column.",
+      "effective": {
+        "apparel_and_shoes": "2027-01-15 (goods shipped on or after)",
+        "other_categories": "2027-02-01 (goods shipped on or after)",
+        "note": "apparel/shoes are charged on EVERY returned unit with no threshold; other categories only on returns above the category threshold"
+      },
+      "rules": {
+        "apparel_threshold_pct": 0,
+        "min_units_exemption": "a product with fewer than 25 units shipped in a month pays nothing",
+        "new_selection_exemption": "first 20 returned units per eligible parent ASIN, returns must reach the FC within 120 days of the first inbound date",
+        "return_rate_definition": "percent of units shipped in a month that are actually returned in that month and the following two calendar months",
+        "charge_timing": "charged between the 7th and 15th of the THIRD month after the shipped month",
+        "threshold_review": "reviewed quarterly, measured over a three-calendar-month window"
+      },
+      "apparel_and_shoes": {
+        "charged_on": "every returned unit (no threshold)",
+        "small_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 1.65
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 1.75
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 1.85
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 1.95
+          }
+        ],
+        "large_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 2.04
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 2.12
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 2.19
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 2.27
+          },
+          {
+            "max_weight_oz": 24,
+            "per_unit_usd": 2.62
+          },
+          {
+            "max_weight_oz": 32,
+            "per_unit_usd": 2.98
+          },
+          {
+            "max_weight_oz": 40,
+            "per_unit_usd": 3.33
+          },
+          {
+            "max_weight_oz": 48,
+            "per_unit_usd": 3.69
+          },
+          {
+            "min_weight_oz": 48,
+            "max_weight_oz": 320,
+            "base_usd": 3.89,
+            "per_unit_usd_over_usd": 0.1,
+            "overage_unit_oz": 8,
+            "over_start_oz": 48,
+            "note": "3-20 lb: $3.89 + $0.10 per half pound (or part) over the first 3 lb"
+          }
+        ],
+        "big_and_oversize": [
+          {
+            "tier_group_2027": [
+              "big_small",
+              "big_medium",
+              "big_large",
+              "big_xlarge"
+            ],
+            "label": "小号/中号/大号/超大号大件",
+            "max_lb": 50,
+            "base_usd": 6.74,
+            "per_lb_over_usd": 0.32,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_small"
+            ],
+            "label": "小型超大件",
+            "max_lb": 50,
+            "base_usd": 26.33,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_medium"
+            ],
+            "label": "中型超大件",
+            "max_lb": 70,
+            "base_usd": 40.12,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 51
+          },
+          {
+            "tier_group_2027": [
+              "xl_large",
+              "xl_long",
+              "xl_light_special"
+            ],
+            "label": "大型/长型/轻型特殊超大件",
+            "max_lb": 150,
+            "base_usd": 52.45,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 71
+          },
+          {
+            "tier_group_2027": [
+              "xl_heavy_special"
+            ],
+            "label": "重型特殊超大件",
+            "max_lb": null,
+            "base_usd": 157.35,
+            "per_lb_over_usd": 0.19,
+            "over_start_lb": 150
+          }
+        ]
+      },
+      "other_categories": {
+        "charged_on": "returns ABOVE the category threshold only",
+        "small_standard": [
+          {
+            "max_weight_oz": 2,
+            "per_unit_usd": 1.78
+          },
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 1.84
+          },
+          {
+            "max_weight_oz": 6,
+            "per_unit_usd": 1.9
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 1.96
+          },
+          {
+            "max_weight_oz": 10,
+            "per_unit_usd": 2.02
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 2.08
+          },
+          {
+            "max_weight_oz": 14,
+            "per_unit_usd": 2.14
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 2.21
+          }
+        ],
+        "large_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 2.36
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 2.7
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 3.05
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 3.39
+          },
+          {
+            "max_weight_oz": 20,
+            "per_unit_usd": 3.7
+          },
+          {
+            "max_weight_oz": 24,
+            "per_unit_usd": 4.01
+          },
+          {
+            "max_weight_oz": 28,
+            "per_unit_usd": 4.32
+          },
+          {
+            "max_weight_oz": 32,
+            "per_unit_usd": 4.63
+          },
+          {
+            "max_weight_oz": 36,
+            "per_unit_usd": 4.66
+          },
+          {
+            "max_weight_oz": 40,
+            "per_unit_usd": 4.68
+          },
+          {
+            "max_weight_oz": 44,
+            "per_unit_usd": 4.71
+          },
+          {
+            "max_weight_oz": 48,
+            "per_unit_usd": 4.73
+          },
+          {
+            "min_weight_oz": 48,
+            "max_weight_oz": 320,
+            "base_usd": 5.0,
+            "per_unit_usd_over_usd": 0.05,
+            "overage_unit_oz": 4,
+            "over_start_oz": 48,
+            "note": "3-20 lb: $5.00 + $0.05 per 4 oz (or part) over the first 3 lb"
+          }
+        ],
+        "big_and_oversize": [
+          {
+            "tier_group_2027": [
+              "big_small",
+              "big_medium",
+              "big_large",
+              "big_xlarge"
+            ],
+            "label": "小号/中号/大号/超大号大件",
+            "max_lb": 50,
+            "base_usd": 6.74,
+            "per_lb_over_usd": 0.32,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_small"
+            ],
+            "label": "小型超大件",
+            "max_lb": 50,
+            "base_usd": 26.33,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_medium"
+            ],
+            "label": "中型超大件",
+            "max_lb": 70,
+            "base_usd": 40.12,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 51
+          },
+          {
+            "tier_group_2027": [
+              "xl_large",
+              "xl_long",
+              "xl_light_special"
+            ],
+            "label": "大型/长型/轻型特殊超大件",
+            "max_lb": 150,
+            "base_usd": 52.45,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 71
+          },
+          {
+            "tier_group_2027": [
+              "xl_heavy_special"
+            ],
+            "label": "重型特殊超大件",
+            "max_lb": null,
+            "base_usd": 157.35,
+            "per_lb_over_usd": 0.19,
+            "over_start_lb": 150
+          }
+        ]
+      },
+      "return_rate_thresholds_pct": {
+        "3D Printers": 6.0,
+        "Amazon Device Accessories": 11.3,
+        "Amazon Explore": 4.8,
+        "Automotive & Outdoor Power Equipment": 9.1,
+        "Baby Products": 9.3,
+        "Backpacks, Handbags & Luggage": 12.8,
+        "Base Equipment Power Tools": 7.1,
+        "Beauty & Personal Care": 5.5,
+        "Business, Industrial & Scientific": 6.0,
+        "Compact Appliances": 12.6,
+        "Computers": 11.4,
+        "Consumer Electronics": 11.2,
+        "Electronics Accessories": 8.8,
+        "Everything Else": 4.8,
+        "Eyewear": 12.1,
+        "Fine Art": 5.6,
+        "Full-Size Appliances": 11.9,
+        "Furniture": 9.6,
+        "Gift Cards": 4.8,
+        "Grocery": 2.9,
+        "Home & Kitchen": 8.1,
+        "Jewelry": 10.8,
+        "Lawn & Garden": 7.7,
+        "Lawn Mowers & Snow Throwers": 9.5,
+        "Mattresses": 9.3,
+        "Media - Books, DVD, Music, Software, Video": 5.1,
+        "Musical Instruments & AV Production": 9.2,
+        "Office Products": 4.4,
+        "Pet Supplies": 10.2,
+        "Sports & Outdoors": 8.7,
+        "Tires": 8.7,
+        "Tools & Home Improvement": 8.7,
+        "Toys & Games": 4.7,
+        "Video Game Consoles": 10.7,
+        "Video Games & Gaming Accessories": 6.5,
+        "Watches": 12.0
+      },
+      "official_worked_examples": [
+        {
+          "case": "mobile case, small standard 2-4 oz, non-apparel",
+          "per_unit_usd": 1.84
+        },
+        {
+          "case": "plate, large standard 12-16 oz, non-apparel",
+          "per_unit_usd": 3.39
+        },
+        {
+          "case": "T-shirt, large standard 8-12 oz, apparel",
+          "per_unit_usd": 2.19
+        },
+        {
+          "case": "crib, big item 7.90 lb",
+          "per_unit_usd": 8.98,
+          "breakdown": "6.74 + ceil(7.90-1) x 0.32"
+        },
+        {
+          "case": "1000 shipped in June, 120 returned, 10% threshold -> 20 units charged, billed Sep 7-15",
+          "charged_units": 20
+        }
+      ],
+      "tier_mapping_2026_to_2027": {
+        "small_bulky + large_bulky": "-> small/medium/large/xlarge big (all four share $6.74 base)",
+        "oversize 0-50": "-> xl_small ($26.33)",
+        "oversize 50-70": "-> xl_medium ($40.12)",
+        "oversize 70-150": "-> xl_large / xl_long / xl_light_special (all three share $52.45 base)",
+        "oversize 150+": "-> xl_heavy_special ($157.35)"
+      }
+    },
     "low_inventory_level_fee": {
       "applies_to": [
         "Small standard (up to 16 oz)",

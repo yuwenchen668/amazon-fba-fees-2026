@@ -4,18 +4,26 @@
     "id": "ylishi-fba-us-2027",
     "name": "Amazon US FBA Fee Rates 2027",
     "description": "Amazon US Fulfillment by Amazon (FBA) fee schedule announced 2026-11-05, effective 2027-01-15. Separate file from fba-us-2026.json ON PURPOSE: the 2027 card re-prices by BOTH weight rung and price band ($10/$50 cut-offs), restructures bulky into 4 tiers and oversized into 6 tiers, and narrows Low-Price FBA eligibility. The 2026 file is a flat base_fee per tier and must NOT be mutated to hold this shape.",
-    "version": "2027.11.12",
+    "version": "2027.11.17",
     "effective_dates": {
       "rate_card": "2027-01-15",
-      "peak_fulfillment_reverts": "2027-01-15",
-      "low_inventory_level_fee": "February 1 (year not stated in source; 2027 assumed — verify)",
+      "low_inventory_level_fee": "2027-02-01",
       "unified_storage": "2027-02-01",
-      "low_price_eligibility_cut": "2027-01-15",
-      "apparel_low_price_cut": "2027-01-15",
-      "other_categories_low_price_cut": "2027-02-01",
-      "note": "2027-01-15 is both the last day of the 2026-27 peak window and the first day of this card, which is why every caller must pass a ship date."
+      "awd_fees": "2027-02-01",
+      "awd_storage_age_banded": "2027-03-01",
+      "mcd_fees": "2027-02-01",
+      "promo_monthly_billing": "2027-02-01",
+      "mcf_and_buy_with_prime": "2027-01-15",
+      "remote_fulfillment_us_ca_mx_br": "2027-01-15",
+      "panamericas_fuel_surcharge": "2027-01-15",
+      "return_processing_apparel_and_shoes": "2027-01-15",
+      "return_processing_other_categories": "2027-02-01",
+      "referral_3d_printers": "2026-11-05",
+      "refurbished_promo_ends": "2027-10-18",
+      "inbound_placement_regions": "2027-01-15 (regions 3 -> 2; rates unchanged)",
+      "note": "2027-01-15 is both the last day of the 2026-27 peak window and the first day of this card - every caller must pass a ship date."
     },
-    "last_verified": "2026-11-12",
+    "last_verified": "2026-11-17",
     "verified_by": "Browser-rendered scrape of the official help page (the page is JS-rendered; curl returns a 171 KB shell with no rates). Every number in rates.fulfillment_fees_standard and rates.fulfillment_fees_standard_apparel was compared cell-by-cell against the page: 21/21 standard rows x 3 price bands x 2 cards, zero mismatches.",
     "publisher": {
       "name": "ylishi.tools",
@@ -33,6 +41,18 @@
       {
         "name": "Amazon Selling Partners — 2027 fee update announcement (page carries 2026-11-05)",
         "url": "https://sellingpartners.aboutamazon.com/"
+      },
+      {
+        "name": "Amazon Seller Central - unified monthly storage fee (2027-02-01 age-banded rate table)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/GVZX6EAEL2KZ3SGA"
+      },
+      {
+        "name": "Amazon Seller Central - FBA inbound placement service fee (published ranges, unchanged for 2027)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/inbound-placement-fee"
+      },
+      {
+        "name": "Amazon Seller Central - 2027 US referral and FBA fee overview (multi-date)",
+        "url": "https://sellercentral.amazon.com/help/hub/reference/external/2027-us-fee-changes-overview"
       }
     ],
     "license": {
@@ -40,7 +60,7 @@
       "url": "https://creativecommons.org/licenses/by/4.0/",
       "attribution": "Data: ylishi.tools (https://ylishi.tools/annual-fba-report/), CC BY 4.0"
     },
-    "how_to_cite": "ylishi.tools, \"Amazon US FBA Fee Rates 2027\" (dataset v2027.11.1, verified 2026-11-12), https://ylishi.tools/rates/fba-us-2027.json, CC BY 4.0",
+    "how_to_cite": "ylishi.tools, \"Amazon US FBA Fee Rates 2027\" (dataset v2027.11.17, verified 2026-11-17), https://ylishi.tools/rates/fba-us-2027.json, CC BY 4.0",
     "coverage": {
       "marketplace": "amazon.com (US)",
       "currency": "USD",
@@ -66,7 +86,8 @@
     "related": {
       "prior_card": "https://ylishi.tools/rates/fba-us-2026.json"
     },
-    "note_v2027_11_2": "Cross-checked against the full official page table (all 8 tables) and against the three worked examples on the page: 21/21 non-apparel rows, 21/21 apparel rows and 10/10 bulky-oversized rows match cell-for-cell; the worked examples additionally pin the excess-weight rounding rule to ceil-to-whole-pound."
+    "note_v2027_11_2": "Cross-checked against the full official page table (all 8 tables) and against the three worked examples on the page: 21/21 non-apparel rows, 21/21 apparel rows and 10/10 bulky-oversized rows match cell-for-cell; the worked examples additionally pin the excess-weight rounding rule to ceil-to-whole-pound.",
+    "next_review_due": "2027-01-15"
   },
   "rates": {
     "fuel_surcharge_on_fulfillment": {
@@ -686,15 +707,70 @@
       "bulky_restructure": "2026 had 2 bulky tiers (Small/Large Bulky). 2027 splits them into 4: 小号大件 / 中号大件 / 大号大件 / 超大号大件.",
       "oversized_restructure": "2026 had 4 oversized tiers. 2027 splits them into 6: 小型超大件 / 中型超大件 / 大型超大件 / 长型超大件 / 轻型特殊超大件 / 重型特殊超大件.",
       "handling_fee_change": "From 2027-01-15 the extra-large handling fee (2026: $17/$21/$25 by weight band) is RETIRED. Replaced by two dimension-based fees that can stack: flat-item handling ($8.40-$29.53) when shortest side <4in AND second-longest >=25in, and protruding-item handling ($3.45-$10.45) when second-longest >43in. A single item can now pay both.",
-      "low_inventory_fee": "From February 1 (YEAR NOT STATED in the official text — 2027 assumed from context, verify before quoting) charged only when stock is below 28 days of cover based on actual shipments in the 4 weeks either side of the assessment date.",
-      "unified_storage": "From 2027-02-01 the storage-utilisation surcharge is retired and aged-inventory surcharges fold into a single age-tiered monthly storage rate (>6 months rises, <6 months flat or lower)."
+      "low_inventory_fee": "From 2027-02-01 charged only when stock is below 28 days of supply, measured on actual shipments in the 4 weeks BEFORE and AFTER the assessment date (was: 30-day and 90-day historical sales). Year confirmed as 2027 by three independent official pages (overview page, 2027 fulfilment page, unified-storage page). The forward 4-week window is unknowable at quote time - a calculator must say it cannot evaluate it.",
+      "unified_storage": "From 2027-02-01 the storage-utilisation surcharge is retired and the aged-inventory surcharge folds into a single age-banded monthly storage rate. Full table now in rates.unified_monthly_storage_2027. <6 months flat or lower, >6 months rises; apparel 181-270 days pays a lower rate (1.78/1.56) but is now charged at all (was exempt).",
+      "size_tier_definitions": "From 2027-01-15: bulky 2 -> 4 tiers (28/24/20, 37/28/20, 52/28/28, 59/33/33) and oversized 4 -> 6 tiers keyed on longest side (72, 78, 96, 108, >=108+>=165, >150 lb). Never map 2026 tiers to 2027 by name - re-tier on billable weight.",
+      "billable_weight": "Dimensional weight = L x W x H / 139; bulky and oversized assume a minimum width and height of 2 inches. Overage rounds up to the whole pound. Prices of exactly $10 or $50 take the $10-$50 band. Peak is decided by ship date.",
+      "inbound_placement": "Rate card unchanged; from 2027-01-15 standard-size Central placement merges into East (regions 3 -> 2). See rates.inbound_placement_current for the real published ranges.",
+      "other_fees_2027": {
+        "awd": {
+          "effective": "2027-02-01",
+          "per_case_usd": 1.55,
+          "transit_per_cuft_usd": 1.58,
+          "single_sku_pallet_inbound_discount": 0.4,
+          "storage_age_banded_from": "2027-03-01",
+          "storage_over_12_months_multiplier": 2.5,
+          "fuel_surcharge_applies_to_transit": "2027-02-01",
+          "source": "2027 overview page - averages and named figures only; no full AWD rate table published here"
+        },
+        "mcf_and_buy_with_prime": {
+          "standard_and_bwp_uplift": 0.035,
+          "expedited": "flat",
+          "preferred_delivery_discount_up_to": 0.25,
+          "note": "MCF size tiers align with FBA; boxed returns get a return surcharge"
+        },
+        "mcd": {
+          "effective": "2027-02-01",
+          "pallet_ltl_uplift": 0.08,
+          "parcel_spd_uplift": 0.015,
+          "fuel_surcharge_applies": true
+        },
+        "remote_fulfillment": {
+          "us_to_ca_avg": 0.58,
+          "us_to_mx_avg": 0.16,
+          "us_to_br_avg": 0.16,
+          "panamericas_to_ca_avg": 0.13,
+          "caveat": "all four are AVERAGES - no rate table published on these pages; do not back-solve a matrix"
+        },
+        "referral_3d_printers": {
+          "effective": "2026-11-05",
+          "first_200": 0.12,
+          "above_200": 0.05,
+          "breakeven_vs_old_12pct": 201.0
+        },
+        "promo_fees": {
+          "buy_x_get_y": {
+            "upfront_usd": 5.0,
+            "variable_pct": 0.02,
+            "variable_cap_usd": 2000
+          },
+          "monthly_billing_from": "2027-02-01"
+        },
+        "refurbished_referral_promo": {
+          "rate": 0.1,
+          "ends": "2027-10-18",
+          "auto_applied": true
+        },
+        "fba_new_selection": {
+          "max_benefit_per_unit_usd": 600,
+          "first_units": 200
+        }
+      }
     },
     "not_restated_here": [
       "referral_fees",
       "monthly_storage_per_cuft",
-      "aged_inventory_surcharge",
-      "inbound_placement",
-      "return_processing_fees"
+      "aged_inventory_surcharge"
     ],
     "billable_weight_rule": {
       "official_text_zh": "体积重量等于单件商品体积（长 x 宽 x 高）除以 139。对于大件商品和超大件商品，我们假定最小宽度和高度为 2 英寸。对于所有大号标准尺寸、大件和超大件商品（特殊超大件重型商品除外），如果体积重量大于单件商品重量，我们将按体积重量计算费用。小号标准尺寸和特殊超大件重型商品将按单件商品重量计算费用。",
@@ -1480,6 +1556,750 @@
       "important": "The uplift is the SAME across all three price bands (<$10 / $10-$50 / >$50) — verified row by row on the official table. Only the base fee varies by band.",
       "avoid": "Do NOT apply PEAK_FULFILLMENT.byTier as a flat per-tier uplift. byTier is a per-TIER top-of-range figure (e.g. ss=0.20) but the real uplift steps from 0.19 (<=2oz) to 0.22 (14-16oz) inside ss alone. On ls1 the gap is 0.24 vs 0.29 = up to $0.05/unit.",
       "rate_bands_2026_peak_captured": true
-    }
+    },
+    "size_tier_terminology_2027": {
+      "second_longest_side": "既不是最长边也不是最短边的商品尺寸",
+      "girth": "2 ×（次长边 + 最短边）",
+      "item_weight": "包装后的单件商品的实际重量",
+      "flat_item": "属于大件，且最短边 < 4 英寸且次长边 ≥ 25 英寸",
+      "protruding_item": "属于大件，且次长边 > 43 英寸（原文称「超限悬挂」）",
+      "note": "扁平商品处理费与外伸商品处理费可能同时产生"
+    },
+    "unified_monthly_storage_2027": {
+      "effective": "2027-02-01",
+      "unit": "USD per cubic foot per month",
+      "source_ref": "GVZX6EAEL2KZ3SGA",
+      "structure": "single age-banded monthly storage rate; storage-utilisation surcharge retired; aged-inventory surcharge folded in",
+      "billing": "assessed monthly at month end per FNSKU on average daily volume; charged between the 7th and 15th of the following month",
+      "non_peak_jan_sep": [
+        {
+          "age_days_from": 0,
+          "age_days_to": 180,
+          "standard_per_cuft": 0.78,
+          "bulky_oversized_per_cuft": 0.56,
+          "apparel_standard_per_cuft": 0.78,
+          "apparel_bulky_oversized_per_cuft": 0.56
+        },
+        {
+          "age_days_from": 181,
+          "age_days_to": 210,
+          "standard_per_cuft": 2.78,
+          "bulky_oversized_per_cuft": 2.56,
+          "apparel_standard_per_cuft": 1.78,
+          "apparel_bulky_oversized_per_cuft": 1.56
+        },
+        {
+          "age_days_from": 211,
+          "age_days_to": 240,
+          "standard_per_cuft": 2.78,
+          "bulky_oversized_per_cuft": 2.56,
+          "apparel_standard_per_cuft": 1.78,
+          "apparel_bulky_oversized_per_cuft": 1.56
+        },
+        {
+          "age_days_from": 241,
+          "age_days_to": 270,
+          "standard_per_cuft": 2.78,
+          "bulky_oversized_per_cuft": 2.56,
+          "apparel_standard_per_cuft": 1.78,
+          "apparel_bulky_oversized_per_cuft": 1.56
+        },
+        {
+          "age_days_from": 271,
+          "age_days_to": 300,
+          "standard_per_cuft": 6.68,
+          "bulky_oversized_per_cuft": 6.46,
+          "apparel_standard_per_cuft": 6.68,
+          "apparel_bulky_oversized_per_cuft": 6.46
+        },
+        {
+          "age_days_from": 301,
+          "age_days_to": 330,
+          "standard_per_cuft": 6.68,
+          "bulky_oversized_per_cuft": 6.46,
+          "apparel_standard_per_cuft": 6.68,
+          "apparel_bulky_oversized_per_cuft": 6.46
+        },
+        {
+          "age_days_from": 331,
+          "age_days_to": 365,
+          "standard_per_cuft": 6.68,
+          "bulky_oversized_per_cuft": 6.46,
+          "apparel_standard_per_cuft": 6.68,
+          "apparel_bulky_oversized_per_cuft": 6.46
+        }
+      ],
+      "long_storage_greater_of": [
+        {
+          "age_days_from": 366,
+          "age_days_to": 455,
+          "standard": {
+            "per_cuft": 7.68,
+            "alt_per_cuft": 0.78,
+            "alt_per_unit": 0.3
+          },
+          "bulky_oversized": {
+            "per_cuft": 7.46,
+            "alt_per_cuft": 0.56,
+            "alt_per_unit": 0.3
+          }
+        },
+        {
+          "age_days_from": 456,
+          "age_days_to": null,
+          "standard": {
+            "per_cuft": 8.68,
+            "alt_per_cuft": 0.78,
+            "alt_per_unit": 0.35
+          },
+          "bulky_oversized": {
+            "per_cuft": 8.46,
+            "alt_per_cuft": 0.56,
+            "alt_per_unit": 0.35
+          }
+        }
+      ],
+      "long_storage_note": "366+ and 456+ bands: Amazon charges the GREATER of the flat per-cuft rate and (per-cuft base + per-unit amount). Apparel columns equal the non-apparel columns on these two bands.",
+      "peak_add_oct_dec": {
+        "standard": 1.62,
+        "bulky_oversized": 0.84,
+        "apparel_standard": 1.62,
+        "apparel_bulky_oversized": 0.84,
+        "note": "added to the non-peak rate"
+      },
+      "hazardous_add": {
+        "non_peak": {
+          "standard": 0.21,
+          "bulky_oversized": 0.22
+        },
+        "peak": {
+          "standard": 1.23,
+          "bulky_oversized": 1.03
+        },
+        "note": "added to the non-hazardous rate"
+      },
+      "exemptions": [
+        "FBA New Selection programme eligible units: free for a limited time",
+        "FNSKU with >=70% auto-replenishment from AWD: billed at the 0-180 day rate regardless of actual age"
+      ],
+      "official_worked_examples": [
+        {
+          "case": "standard, July, 100 units x 0.05 cu ft, all 0-180 days",
+          "volume_cuft": 5.0,
+          "rate": 0.78,
+          "total_usd": 3.9
+        },
+        {
+          "case": "standard, July, 80 units 0-180d + 20 units 181-270d @0.05 cu ft",
+          "total_usd": 5.9,
+          "breakdown": "4 cu ft x 0.78 = 3.12 ; 1 cu ft x 2.78 = 2.78"
+        },
+        {
+          "case": "standard, November (peak), 50 units 271-365d @0.05 cu ft",
+          "volume_cuft": 2.5,
+          "rate": 8.3,
+          "total_usd": 20.75,
+          "breakdown": "6.68 + 1.62 = 8.30"
+        },
+        {
+          "case": "standard AWD auto-replenish, July, 40 units 181-270d @0.05 cu ft",
+          "volume_cuft": 2.0,
+          "rate": 0.78,
+          "total_usd": 1.56
+        }
+      ]
+    },
+    "inbound_placement_current": {
+      "effective": "current (unchanged from 2027-01-15; standard-size Central region merged into East, placement regions 3 -> 2)",
+      "options": {
+        "single_location": "ship to one location; fee applies",
+        "partial_split": "big items only, 2-3 locations; lower fee than single",
+        "amazon_optimized_split": "no fee; requires >=5 identical cartons or pallets per SKU (same item mix and quantities)"
+      },
+      "excluded": "oversize items are NOT charged an inbound placement fee",
+      "charged": "45 days after receipt, based on received quantity",
+      "billable_weight_rule": "small standard uses item weight; large standard and above use the greater of item weight and dimensional weight",
+      "standard_size_single_location_usd": [
+        {
+          "size_tier": "Small standard",
+          "from_oz": 0,
+          "to_oz": 8,
+          "min": 0.14,
+          "max": 0.32
+        },
+        {
+          "size_tier": "Small standard",
+          "from_oz": 8,
+          "to_oz": 16,
+          "min": 0.16,
+          "max": 0.32
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 0,
+          "to_oz": 12,
+          "min": 0.2,
+          "max": 0.4
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 12,
+          "to_oz": 24,
+          "min": 0.24,
+          "max": 0.5
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 24,
+          "to_oz": 48,
+          "min": 0.34,
+          "max": 0.6
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 48,
+          "to_oz": 80,
+          "min": 0.38,
+          "max": 0.76
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 80,
+          "to_oz": 112,
+          "min": 0.4,
+          "max": 0.98
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 112,
+          "to_oz": 160,
+          "min": 0.42,
+          "max": 1.2
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 160,
+          "to_oz": 240,
+          "min": 0.44,
+          "max": 1.5
+        },
+        {
+          "size_tier": "Large standard",
+          "from_oz": 240,
+          "to_oz": 320,
+          "min": 0.55,
+          "max": 1.9
+        }
+      ],
+      "big_items_usd": [
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 0,
+          "to_lb": 5,
+          "single_min": 1.1,
+          "single_max": 1.6,
+          "partial_min": 0.55,
+          "partial_max": 1.1
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 5,
+          "to_lb": 12,
+          "single_min": 1.75,
+          "single_max": 2.4,
+          "partial_min": 0.65,
+          "partial_max": 1.75
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 12,
+          "to_lb": 28,
+          "single_min": 2.74,
+          "single_max": 3.5,
+          "partial_min": 0.81,
+          "partial_max": 2.19
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 28,
+          "to_lb": 42,
+          "single_min": 3.95,
+          "single_max": 4.95,
+          "partial_min": 1.05,
+          "partial_max": 2.83
+        },
+        {
+          "tier_group": "small_or_medium_big",
+          "from_lb": 42,
+          "to_lb": 50,
+          "single_min": 4.8,
+          "single_max": 5.95,
+          "partial_min": 1.23,
+          "partial_max": 3.32
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 0,
+          "to_lb": 5,
+          "single_min": 1.3,
+          "single_max": 1.8,
+          "partial_min": 0.55,
+          "partial_max": 1.25
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 5,
+          "to_lb": 12,
+          "single_min": 2.1,
+          "single_max": 2.9,
+          "partial_min": 0.65,
+          "partial_max": 1.8
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 12,
+          "to_lb": 28,
+          "single_min": 3.4,
+          "single_max": 4.1,
+          "partial_min": 0.81,
+          "partial_max": 2.3
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 28,
+          "to_lb": 42,
+          "single_min": 4.7,
+          "single_max": 5.6,
+          "partial_min": 1.05,
+          "partial_max": 2.95
+        },
+        {
+          "tier_group": "large_or_xlarge_big",
+          "from_lb": 42,
+          "to_lb": 50,
+          "single_min": 5.5,
+          "single_max": 6.5,
+          "partial_min": 1.23,
+          "partial_max": 3.5
+        }
+      ],
+      "official_worked_example": {
+        "case": "single location, Western US, 100 units large standard <=12oz",
+        "per_unit_usd": 0.36,
+        "total_usd": 36.0,
+        "within_published_range": true
+      },
+      "new_seller_credit": "USD 400 credit toward inbound placement fees for new sellers who create their first shipment within 90 days of launch",
+      "note_on_replaced_values": "The previous 2026 dataset carried four flat options (Minimal placement $0.15-$0.50 / Partial placement $0.35-$0.98 / Small parcel $0.10 / None). Those option names and numbers do NOT exist on the official page and have been retired."
+    },
+    "known_gaps": [
+      "bulky/extra-large SIZE TIER DEFINITIONS (GG5KW835AHDJCH8W) — 4 tiers share 0-50 lb",
+      "apparel bulky/extra-large 2027 table (the paste truncates before it)",
+      "dangerous-goods table (TOC only)",
+      "2027-2028 peak uplift (next season)",
+      "low-price eligibility: English fee-category names for 小型电器 / 电脑 (2 of 5 groups still unenforceable)",
+      "low-inventory rates, unified age-banded storage rates, returns-processing rates, remote-fulfillment matrix"
+    ],
+    "return_processing_fees_full": {
+      "source_ref": "2027 return-processing fee page (site owner supplied 2026-11-17)",
+      "change_note": "Only the size tiers change - the rate numbers are the same on both sides of the change. The old 7 flat rows were both too coarse AND missing the entire apparel column.",
+      "effective": {
+        "apparel_and_shoes": "2027-01-15 (goods shipped on or after)",
+        "other_categories": "2027-02-01 (goods shipped on or after)",
+        "note": "apparel/shoes are charged on EVERY returned unit with no threshold; other categories only on returns above the category threshold"
+      },
+      "rules": {
+        "apparel_threshold_pct": 0,
+        "min_units_exemption": "a product with fewer than 25 units shipped in a month pays nothing",
+        "new_selection_exemption": "first 20 returned units per eligible parent ASIN, returns must reach the FC within 120 days of the first inbound date",
+        "return_rate_definition": "percent of units shipped in a month that are actually returned in that month and the following two calendar months",
+        "charge_timing": "charged between the 7th and 15th of the THIRD month after the shipped month",
+        "threshold_review": "reviewed quarterly, measured over a three-calendar-month window"
+      },
+      "apparel_and_shoes": {
+        "charged_on": "every returned unit (no threshold)",
+        "small_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 1.65
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 1.75
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 1.85
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 1.95
+          }
+        ],
+        "large_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 2.04
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 2.12
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 2.19
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 2.27
+          },
+          {
+            "max_weight_oz": 24,
+            "per_unit_usd": 2.62
+          },
+          {
+            "max_weight_oz": 32,
+            "per_unit_usd": 2.98
+          },
+          {
+            "max_weight_oz": 40,
+            "per_unit_usd": 3.33
+          },
+          {
+            "max_weight_oz": 48,
+            "per_unit_usd": 3.69
+          },
+          {
+            "min_weight_oz": 48,
+            "max_weight_oz": 320,
+            "base_usd": 3.89,
+            "per_unit_usd_over_usd": 0.1,
+            "overage_unit_oz": 8,
+            "over_start_oz": 48,
+            "note": "3-20 lb: $3.89 + $0.10 per half pound (or part) over the first 3 lb"
+          }
+        ],
+        "big_and_oversize": [
+          {
+            "tier_group_2027": [
+              "big_small",
+              "big_medium",
+              "big_large",
+              "big_xlarge"
+            ],
+            "label": "小号/中号/大号/超大号大件",
+            "max_lb": 50,
+            "base_usd": 6.74,
+            "per_lb_over_usd": 0.32,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_small"
+            ],
+            "label": "小型超大件",
+            "max_lb": 50,
+            "base_usd": 26.33,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_medium"
+            ],
+            "label": "中型超大件",
+            "max_lb": 70,
+            "base_usd": 40.12,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 51
+          },
+          {
+            "tier_group_2027": [
+              "xl_large",
+              "xl_long",
+              "xl_light_special"
+            ],
+            "label": "大型/长型/轻型特殊超大件",
+            "max_lb": 150,
+            "base_usd": 52.45,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 71
+          },
+          {
+            "tier_group_2027": [
+              "xl_heavy_special"
+            ],
+            "label": "重型特殊超大件",
+            "max_lb": null,
+            "base_usd": 157.35,
+            "per_lb_over_usd": 0.19,
+            "over_start_lb": 150
+          }
+        ]
+      },
+      "other_categories": {
+        "charged_on": "returns ABOVE the category threshold only",
+        "small_standard": [
+          {
+            "max_weight_oz": 2,
+            "per_unit_usd": 1.78
+          },
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 1.84
+          },
+          {
+            "max_weight_oz": 6,
+            "per_unit_usd": 1.9
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 1.96
+          },
+          {
+            "max_weight_oz": 10,
+            "per_unit_usd": 2.02
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 2.08
+          },
+          {
+            "max_weight_oz": 14,
+            "per_unit_usd": 2.14
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 2.21
+          }
+        ],
+        "large_standard": [
+          {
+            "max_weight_oz": 4,
+            "per_unit_usd": 2.36
+          },
+          {
+            "max_weight_oz": 8,
+            "per_unit_usd": 2.7
+          },
+          {
+            "max_weight_oz": 12,
+            "per_unit_usd": 3.05
+          },
+          {
+            "max_weight_oz": 16,
+            "per_unit_usd": 3.39
+          },
+          {
+            "max_weight_oz": 20,
+            "per_unit_usd": 3.7
+          },
+          {
+            "max_weight_oz": 24,
+            "per_unit_usd": 4.01
+          },
+          {
+            "max_weight_oz": 28,
+            "per_unit_usd": 4.32
+          },
+          {
+            "max_weight_oz": 32,
+            "per_unit_usd": 4.63
+          },
+          {
+            "max_weight_oz": 36,
+            "per_unit_usd": 4.66
+          },
+          {
+            "max_weight_oz": 40,
+            "per_unit_usd": 4.68
+          },
+          {
+            "max_weight_oz": 44,
+            "per_unit_usd": 4.71
+          },
+          {
+            "max_weight_oz": 48,
+            "per_unit_usd": 4.73
+          },
+          {
+            "min_weight_oz": 48,
+            "max_weight_oz": 320,
+            "base_usd": 5.0,
+            "per_unit_usd_over_usd": 0.05,
+            "overage_unit_oz": 4,
+            "over_start_oz": 48,
+            "note": "3-20 lb: $5.00 + $0.05 per 4 oz (or part) over the first 3 lb"
+          }
+        ],
+        "big_and_oversize": [
+          {
+            "tier_group_2027": [
+              "big_small",
+              "big_medium",
+              "big_large",
+              "big_xlarge"
+            ],
+            "label": "小号/中号/大号/超大号大件",
+            "max_lb": 50,
+            "base_usd": 6.74,
+            "per_lb_over_usd": 0.32,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_small"
+            ],
+            "label": "小型超大件",
+            "max_lb": 50,
+            "base_usd": 26.33,
+            "per_lb_over_usd": 0.38,
+            "over_start_lb": 1
+          },
+          {
+            "tier_group_2027": [
+              "xl_medium"
+            ],
+            "label": "中型超大件",
+            "max_lb": 70,
+            "base_usd": 40.12,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 51
+          },
+          {
+            "tier_group_2027": [
+              "xl_large",
+              "xl_long",
+              "xl_light_special"
+            ],
+            "label": "大型/长型/轻型特殊超大件",
+            "max_lb": 150,
+            "base_usd": 52.45,
+            "per_lb_over_usd": 0.75,
+            "over_start_lb": 71
+          },
+          {
+            "tier_group_2027": [
+              "xl_heavy_special"
+            ],
+            "label": "重型特殊超大件",
+            "max_lb": null,
+            "base_usd": 157.35,
+            "per_lb_over_usd": 0.19,
+            "over_start_lb": 150
+          }
+        ]
+      },
+      "return_rate_thresholds_pct": {
+        "3D Printers": 6.0,
+        "Amazon Device Accessories": 11.3,
+        "Amazon Explore": 4.8,
+        "Automotive & Outdoor Power Equipment": 9.1,
+        "Baby Products": 9.3,
+        "Backpacks, Handbags & Luggage": 12.8,
+        "Base Equipment Power Tools": 7.1,
+        "Beauty & Personal Care": 5.5,
+        "Business, Industrial & Scientific": 6.0,
+        "Compact Appliances": 12.6,
+        "Computers": 11.4,
+        "Consumer Electronics": 11.2,
+        "Electronics Accessories": 8.8,
+        "Everything Else": 4.8,
+        "Eyewear": 12.1,
+        "Fine Art": 5.6,
+        "Full-Size Appliances": 11.9,
+        "Furniture": 9.6,
+        "Gift Cards": 4.8,
+        "Grocery": 2.9,
+        "Home & Kitchen": 8.1,
+        "Jewelry": 10.8,
+        "Lawn & Garden": 7.7,
+        "Lawn Mowers & Snow Throwers": 9.5,
+        "Mattresses": 9.3,
+        "Media - Books, DVD, Music, Software, Video": 5.1,
+        "Musical Instruments & AV Production": 9.2,
+        "Office Products": 4.4,
+        "Pet Supplies": 10.2,
+        "Sports & Outdoors": 8.7,
+        "Tires": 8.7,
+        "Tools & Home Improvement": 8.7,
+        "Toys & Games": 4.7,
+        "Video Game Consoles": 10.7,
+        "Video Games & Gaming Accessories": 6.5,
+        "Watches": 12.0
+      },
+      "official_worked_examples": [
+        {
+          "case": "mobile case, small standard 2-4 oz, non-apparel",
+          "per_unit_usd": 1.84
+        },
+        {
+          "case": "plate, large standard 12-16 oz, non-apparel",
+          "per_unit_usd": 3.39
+        },
+        {
+          "case": "T-shirt, large standard 8-12 oz, apparel",
+          "per_unit_usd": 2.19
+        },
+        {
+          "case": "crib, big item 7.90 lb",
+          "per_unit_usd": 8.98,
+          "breakdown": "6.74 + ceil(7.90-1) x 0.32"
+        },
+        {
+          "case": "1000 shipped in June, 120 returned, 10% threshold -> 20 units charged, billed Sep 7-15",
+          "charged_units": 20
+        }
+      ],
+      "tier_mapping_2026_to_2027": {
+        "small_bulky + large_bulky": "-> small/medium/large/xlarge big (all four share $6.74 base)",
+        "oversize 0-50": "-> xl_small ($26.33)",
+        "oversize 50-70": "-> xl_medium ($40.12)",
+        "oversize 70-150": "-> xl_large / xl_long / xl_light_special (all three share $52.45 base)",
+        "oversize 150+": "-> xl_heavy_special ($157.35)"
+      }
+    },
+    "return_rate_thresholds_pct": {
+      "3D Printers": 6.0,
+      "Amazon Device Accessories": 11.3,
+      "Amazon Explore": 4.8,
+      "Automotive & Outdoor Power Equipment": 9.1,
+      "Baby Products": 9.3,
+      "Backpacks, Handbags & Luggage": 12.8,
+      "Base Equipment Power Tools": 7.1,
+      "Beauty & Personal Care": 5.5,
+      "Business, Industrial & Scientific": 6.0,
+      "Compact Appliances": 12.6,
+      "Computers": 11.4,
+      "Consumer Electronics": 11.2,
+      "Electronics Accessories": 8.8,
+      "Everything Else": 4.8,
+      "Eyewear": 12.1,
+      "Fine Art": 5.6,
+      "Full-Size Appliances": 11.9,
+      "Furniture": 9.6,
+      "Gift Cards": 4.8,
+      "Grocery": 2.9,
+      "Home & Kitchen": 8.1,
+      "Jewelry": 10.8,
+      "Lawn & Garden": 7.7,
+      "Lawn Mowers & Snow Throwers": 9.5,
+      "Mattresses": 9.3,
+      "Media - Books, DVD, Music, Software, Video": 5.1,
+      "Musical Instruments & AV Production": 9.2,
+      "Office Products": 4.4,
+      "Pet Supplies": 10.2,
+      "Sports & Outdoors": 8.7,
+      "Tires": 8.7,
+      "Tools & Home Improvement": 8.7,
+      "Toys & Games": 4.7,
+      "Video Game Consoles": 10.7,
+      "Video Games & Gaming Accessories": 6.5,
+      "Watches": 12.0
+    },
+    "return_processing_fees_legacy_deprecated": [],
+    "return_processing_fees_note": "return_processing_fees (flat, 7 rows) is DEPRECATED: it was non-apparel only, used invented tier labels ('Small Standard (<6 oz)', 'Large Standard (6 oz-1 lb)') and carried $5.00 for all bulky tiers, a value that does not appear in the official table. Read return_processing_fees_full instead.",
+    "not_restated_here_note": "Keys listed here are genuinely absent from rates{} in THIS file. referral_fees (incl. the 3D Printers category effective 2026-11-05) is NOT restated in the 2027 card because the 2027 announcement changed no referral rates except 3D Printers and the Amazon Renewed promo. Read referral fees from https://ylishi.tools/rates/fba-us-2026.json rates.referral_fees. inbound_placement_current and return_processing_fees_full ARE present here and were removed from this list in v2027.11.17.",
+    "known_gaps_note": "Dated gap register. These fields are known-missing or enforceable-only-partially at dataset.last_verified. Published on purpose: a source that hides its gaps is not citable. Gaps are retired by re-reading the official page, not by editing this list."
   }
 }
