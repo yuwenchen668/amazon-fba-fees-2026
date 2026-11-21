@@ -372,7 +372,8 @@
         "per_lb_over_usd": null,
         "over_start_lb": null,
         "oversize": false,
-        "estimated": false
+        "estimated": false,
+        "fee_anchor_weight_oz": 6.0
       },
       {
         "tier_key": "ls1",
