@@ -54,8 +54,8 @@
       "categories": 25,
       "size_tiers": 11,
       "dangerous_goods_standard_tiers": 5,
-      "fulfillment_rung_tiers_standard": 5,
-      "fulfillment_rung_rows_standard": 21
+      "fulfillment_rung_tiers_standard": 11,
+      "fulfillment_rung_rows_standard": 27
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
     "source_sha256_16": "6bd1578dcc9c19b8",
@@ -747,6 +747,120 @@
         "over_unit_oz": 4.0,
         "over_per_unit_usd": 0.08,
         "per_lb_over_usd": 0.32
+      },
+      "so": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 6.78,
+            "usd_10_to_50": 7.55,
+            "over_50_usd": 7.55,
+            "peak": {
+              "under_10_usd": 7.82,
+              "usd_10_to_50": 8.59,
+              "over_50_usd": 8.59
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "lo": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 8.58,
+            "usd_10_to_50": 9.35,
+            "over_50_usd": 9.35,
+            "peak": {
+              "under_10_usd": 9.62,
+              "usd_10_to_50": 10.39,
+              "over_50_usd": 10.39
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "xl1": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 25.56,
+            "usd_10_to_50": 26.33,
+            "over_50_usd": 26.33,
+            "peak": {
+              "under_10_usd": 28.29,
+              "usd_10_to_50": 29.06,
+              "over_50_usd": 29.06
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "xl2": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 36.55,
+            "usd_10_to_50": 37.32,
+            "over_50_usd": 37.32,
+            "peak": {
+              "under_10_usd": 39.36,
+              "usd_10_to_50": 40.13,
+              "over_50_usd": 40.13
+            }
+          }
+        ],
+        "over_start_oz": 816.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.75,
+        "per_lb_over_usd": 0.75
+      },
+      "xl3": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 50.55,
+            "usd_10_to_50": 51.32,
+            "over_50_usd": 51.32,
+            "peak": {
+              "under_10_usd": 54.97,
+              "usd_10_to_50": 55.74,
+              "over_50_usd": 55.74
+            }
+          }
+        ],
+        "over_start_oz": 1136.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.75,
+        "per_lb_over_usd": 0.75
+      },
+      "xl4": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 194.18,
+            "usd_10_to_50": 194.95,
+            "over_50_usd": 194.95,
+            "peak": {
+              "under_10_usd": 202.69,
+              "usd_10_to_50": 203.46,
+              "over_50_usd": 203.46
+            }
+          }
+        ],
+        "over_start_oz": 2416.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.19,
+        "per_lb_over_usd": 0.19
       }
     },
     "fulfillment_fees_rungs_apparel": {
@@ -1004,6 +1118,120 @@
         "over_unit_oz": 4.0,
         "over_per_unit_usd": 0.08,
         "per_lb_over_usd": 0.32
+      },
+      "so": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 6.78,
+            "usd_10_to_50": 7.55,
+            "over_50_usd": 7.55,
+            "peak": {
+              "under_10_usd": 7.82,
+              "usd_10_to_50": 8.59,
+              "over_50_usd": 8.59
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "lo": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 8.58,
+            "usd_10_to_50": 9.35,
+            "over_50_usd": 9.35,
+            "peak": {
+              "under_10_usd": 9.62,
+              "usd_10_to_50": 10.39,
+              "over_50_usd": 10.39
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "xl1": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 25.56,
+            "usd_10_to_50": 26.33,
+            "over_50_usd": 26.33,
+            "peak": {
+              "under_10_usd": 28.29,
+              "usd_10_to_50": 29.06,
+              "over_50_usd": 29.06
+            }
+          }
+        ],
+        "over_start_oz": 16.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.38,
+        "per_lb_over_usd": 0.38
+      },
+      "xl2": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 36.55,
+            "usd_10_to_50": 37.32,
+            "over_50_usd": 37.32,
+            "peak": {
+              "under_10_usd": 39.36,
+              "usd_10_to_50": 40.13,
+              "over_50_usd": 40.13
+            }
+          }
+        ],
+        "over_start_oz": 816.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.75,
+        "per_lb_over_usd": 0.75
+      },
+      "xl3": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 50.55,
+            "usd_10_to_50": 51.32,
+            "over_50_usd": 51.32,
+            "peak": {
+              "under_10_usd": 54.97,
+              "usd_10_to_50": 55.74,
+              "over_50_usd": 55.74
+            }
+          }
+        ],
+        "over_start_oz": 1136.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.75,
+        "per_lb_over_usd": 0.75
+      },
+      "xl4": {
+        "ladder": [
+          {
+            "max_weight_oz": null,
+            "under_10_usd": 194.18,
+            "usd_10_to_50": 194.95,
+            "over_50_usd": 194.95,
+            "peak": {
+              "under_10_usd": 202.69,
+              "usd_10_to_50": 203.46,
+              "over_50_usd": 203.46
+            }
+          }
+        ],
+        "over_start_oz": 2416.0,
+        "over_unit_oz": 16.0,
+        "over_per_unit_usd": 0.19,
+        "per_lb_over_usd": 0.19
       }
     },
     "fulfillment_fees_dangerous_goods_standard": {
