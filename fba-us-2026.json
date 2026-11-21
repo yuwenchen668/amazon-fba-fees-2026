@@ -59,7 +59,13 @@
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
     "source_sha256_16": "6bd1578dcc9c19b8",
-    "verified_by": "Machine-generated from js/fba-rates-2026.js by rates/gen_rates_dataset.py (JS -> JSON, one-way). Rate values carried over unchanged; the generator only reshapes fields. Individual source rows traced to the Seller Central rate cards listed in dataset.sources. Verification status per figure is NOT uniformly row-by-row re-read — see dataset.verification_scope.",
+    "verified_by": "Machine-generated from js/fba-rates-2026.js by rates/gen_rates_dataset.py (JS -> JSON, one-way; regeneration verified byte-stable on 2026-11-21). Coarse fee values are inherited from the JS rate table unchanged; the per-weight rung, dangerous-goods and fee-anchor blocks are machine-derived from the same JS with zero hand-written values. Individual source rows traced to the Seller Central rate cards listed in dataset.sources. last_verified is the date of the last human-attested independent row-by-row check; the daily automated watch does NOT advance it (see dataset.verification and the companion data/rate-snapshot.json watched_date / verification_kind).",
+    "verification": {
+      "rate_card_effective": "2026-01-15",
+      "last_independent_row_by_row_check": "2026-10-23",
+      "automated_watch": "daily via fee-watch.py; updates data/rate-snapshot.json watched_date, not this dataset",
+      "note": "last_verified is a human-attested check date, not the date of this file. Re-verify by regenerating: python3 rates/gen_rates_dataset.py --check must stay byte-identical."
+    },
     "verification_scope": {
       "numeric_verification": "inherited from the JS rate table; not independently re-read row by row for this JSON export",
       "fields_verified": "structure, coverage counts, source URLs, license, citation string"
