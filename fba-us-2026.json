@@ -15,7 +15,7 @@
       "aged_inventory_tiers": "2026-01-16",
       "low_inventory_level_fee": "2026-01-15"
     },
-    "last_verified": "2026-11-17",
+    "last_verified": "2026-10-23",
     "publisher": {
       "name": "ylishi.tools",
       "url": "https://ylishi.tools/annual-fba-report/"
@@ -58,7 +58,7 @@
       "fulfillment_rung_rows_standard": 21
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
-    "source_sha256_16": "c4da36eb2774db8b",
+    "source_sha256_16": "6bd1578dcc9c19b8",
     "verified_by": "Machine-generated from js/fba-rates-2026.js by rates/gen_rates_dataset.py (JS -> JSON, one-way). Rate values carried over unchanged; the generator only reshapes fields. Individual source rows traced to the Seller Central rate cards listed in dataset.sources. Verification status per figure is NOT uniformly row-by-row re-read — see dataset.verification_scope.",
     "verification_scope": {
       "numeric_verification": "inherited from the JS rate table; not independently re-read row by row for this JSON export",
@@ -67,9 +67,9 @@
     "next_review_due": "2027-02-15",
     "rungs_provenance": {
       "generated_from": "https://ylishi.tools/js/fba-rates-2026.js",
-      "generated_by": "parse_authority_js() in fee-watch.py (python parser, same code path that feeds data/rate-snapshot.json)",
+      "generated_by": "rates/gen_rates_dataset.py (D6 build, 2026-11-21) emits these rungs natively from the authoritative JS",
       "generated_at": "2026-11-21",
-      "note": "rates/gen_rates_dataset.py is the documented regenerator but it shells out to node, and node is not installed on this host as of 2026-11-21; these rung blocks were therefore machine-derived by the python parser over the same authoritative JS, with zero hand-written rate values. Numeric verification scope is unchanged: see dataset.verification_scope."
+      "note": "These rung blocks are emitted natively by rates/gen_rates_dataset.py from SIZE_TIERS[*].ladder / SMALL_STD_2026_8 in the authoritative JS, with zero hand-written rate values. Correction (2026-11-21): an earlier note here claimed node was not installed on this host; that was wrong - node is available via the bundled Playwright binary and the generator runs without it being on PATH. Numeric verification scope is unchanged: see dataset.verification_scope."
     }
   },
   "rates": {
@@ -365,9 +365,9 @@
     "fulfillment_fees": [
       {
         "tier_key": "ss",
-        "size_tier": "Small Standard (<6 oz)",
-        "size_tier_zh": "Small Standard (<6 oz)",
-        "max_weight_oz": 6,
+        "size_tier": "Small Standard (<16 oz)",
+        "size_tier_zh": "Small Standard (<16 oz)",
+        "max_weight_oz": 16,
         "base_fee_usd": 3.45,
         "per_lb_over_usd": null,
         "over_start_lb": null,
