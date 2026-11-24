@@ -58,7 +58,7 @@
       "fulfillment_rung_rows_standard": 27
     },
     "canonical_json": "https://ylishi.tools/rates/fba-us-2026.json",
-    "source_sha256_16": "6bd1578dcc9c19b8",
+    "source_sha256_16": "291cd1264b5c98c6",
     "verified_by": "Machine-generated from js/fba-rates-2026.js by rates/gen_rates_dataset.py (JS -> JSON, one-way; regeneration verified byte-stable on 2026-11-21). Coarse fee values are inherited from the JS rate table unchanged; the per-weight rung, dangerous-goods and fee-anchor blocks are machine-derived from the same JS with zero hand-written values. Individual source rows traced to the Seller Central rate cards listed in dataset.sources. last_verified is the date of the last human-attested independent row-by-row check; the daily automated watch does NOT advance it (see dataset.verification and the companion data/rate-snapshot.json watched_date / verification_kind).",
     "verification": {
       "rate_card_effective": "2026-01-15",
@@ -101,7 +101,8 @@
             "upTo": null,
             "rate": 0.17
           }
-        ]
+        ],
+        "fba_card": "apparel"
       },
       {
         "category": "Consumer Electronics (8%)",
@@ -109,7 +110,8 @@
         "rate": 0.08,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Electronics Accessories (15% ≤$100 / 8% >$100)",
@@ -127,7 +129,8 @@
             "upTo": null,
             "rate": 0.08
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Health & Personal Care (8% ≤$10 / 15% >$10)",
@@ -145,7 +148,8 @@
             "upTo": null,
             "rate": 0.15
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Home & Kitchen (15%)",
@@ -153,7 +157,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Sports & Outdoors (15%)",
@@ -161,7 +166,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Toys & Games (15%)",
@@ -169,7 +175,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Footwear, Handbags & Sunglasses (15%)",
@@ -177,7 +184,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "apparel"
       },
       {
         "category": "Beauty (8% ≤$10 / 15% >$10)",
@@ -195,7 +203,8 @@
             "upTo": null,
             "rate": 0.15
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Tools & Home Improvement (15%)",
@@ -203,7 +212,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Books & Media (15% + $1.80 closing fee)",
@@ -211,15 +221,17 @@
         "rate": 0.15,
         "min_fee_usd": null,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
-        "category": "Video Games & Gaming Accessories (15%)",
-        "category_zh": "Video Games & Gaming Accessories (15%)",
+        "category": "Video Games & Gaming Accessories (15% + $1.80 closing fee)",
+        "category_zh": "Video Games & Gaming Accessories (15% + $1.80 closing fee)",
         "rate": 0.15,
         "min_fee_usd": null,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Musical Instruments (15%)",
@@ -227,7 +239,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Software (15% + $1.80 closing fee)",
@@ -235,15 +248,17 @@
         "rate": 0.15,
         "min_fee_usd": null,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
-        "category": "Video Game Consoles (8%)",
-        "category_zh": "Video Game Consoles (8%)",
+        "category": "Video Game Consoles (8% + $1.80 closing fee)",
+        "category_zh": "Video Game Consoles (8% + $1.80 closing fee)",
         "rate": 0.08,
         "min_fee_usd": null,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Amazon Device Accessories (45%)",
@@ -251,7 +266,8 @@
         "rate": 0.45,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Automotive & Powersports (12%)",
@@ -259,7 +275,8 @@
         "rate": 0.12,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Baby Products (8% ≤$10 / 15% >$10)",
@@ -277,7 +294,8 @@
             "upTo": null,
             "rate": 0.15
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Grocery & Gourmet Food (8% ≤$15 / 15% >$15)",
@@ -295,7 +313,8 @@
             "upTo": null,
             "rate": 0.15
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Business, Industrial & Scientific (12%)",
@@ -303,7 +322,8 @@
         "rate": 0.12,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "3D Printers (12% first $200 / 5% above)",
@@ -323,7 +343,8 @@
           }
         ],
         "min_verified": false,
-        "min_note": "INHERITED, NOT SOURCED. The 2027 fee announcement does not state a minimum referral fee for 3D printers; $0.30 is the official minimum of the 20 categories re-sourced on 2026-09-24e. Exposure is theoretical (a $0.30 floor cannot bind above ~$3 of price) but this is an inference, not a fact."
+        "min_note": "INHERITED, NOT SOURCED. The 2027 fee announcement does not state a minimum referral fee for 3D printers; $0.30 is the official minimum of the 20 categories re-sourced on 2026-09-24e. Exposure is theoretical (a $0.30 floor cannot bind above ~$3 of price) but this is an inference, not a fact.",
+        "fba_card": "standard"
       },
       {
         "category": "Jewelry (20% ≤$250 / 5% >$250, portion)",
@@ -341,7 +362,8 @@
             "upTo": null,
             "rate": 0.05
           }
-        ]
+        ],
+        "fba_card": "standard"
       },
       {
         "category": "Backpacks, Handbags & Luggage (15%)",
@@ -349,7 +371,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Office Products (15%)",
@@ -357,7 +380,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       },
       {
         "category": "Pet Supplies (15%; veterinary diets 22%)",
@@ -365,7 +389,8 @@
         "rate": 0.15,
         "min_fee_usd": 0.3,
         "tiered": false,
-        "high_rate": null
+        "high_rate": null,
+        "fba_card": "standard"
       }
     ],
     "fulfillment_fees": [
